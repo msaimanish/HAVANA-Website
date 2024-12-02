@@ -1,0 +1,490 @@
+/* General Styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #000000;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Lowest layer */
+  object-fit: cover;
+}
+/* * {
+  outline: 1px solid red; /* Adds a red outline to all elements 
+} */
+/* Custom Cursor */
+#custom-cursor {
+  width: 20px;
+  height: 20px;
+  border: 3px solid #ffff33;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  position: fixed;
+  pointer-events: none;
+  z-index: 1000;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease-out, background-color 0.3s ease;
+}
+
+
+
+/* Navigation */
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: flex-end; /* Aligns the navigation items to the right */
+  gap: 20px;
+  position: fixed;
+  top: 20px;
+  right: 20px; /* Moves the navigation to the right */
+  z-index: 2;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #000000;
+  font-size: 1rem; /* Smaller font size */
+  font-family: 'Roboto', sans-serif; /* Robotic style font */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 8px 16px; /* Smaller padding */
+  border-radius: 30px;
+  background-color: #ffffff;
+  box-shadow: 5px 5px 10px rgba(162, 14, 14, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.3); /* Neumorphic shadow effect */
+  transition: color 0.3s ease, text-shadow 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  cursor: none;
+}
+
+/* Hover effect with bubble animation */
+nav ul li a:hover {
+  color: #ffcc00; /* Electric yellow */
+  text-shadow: 0 0 8px rgba(255, 204, 0, 0.7), 0 0 20px rgba(255, 204, 0, 0.5); /* Glow effect */
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.4); /* Hover neumorphism effect */
+  transform: scale(1.1); /* Slight size increase */
+  animation: bubble 0.6s ease-in-out; /* Bubble effect */
+}
+
+
+
+/* Register Button in Navigation */
+nav ul li.register-btn-container {
+  margin-left: 0px; /* Optional: Adds space between other links and register button */
+}
+
+nav ul li.register-btn-container a {
+  text-decoration: none;
+  color: #121212;
+  font-size: 1rem; /* Smaller font size */
+  font-family: 'Roboto', sans-serif;
+  padding: 8px 16px; /* Smaller padding */
+  border-radius: 30px;
+  background-color: #ffcc00;
+  box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.3); /* Neumorphic shadow effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for Register Button */
+nav ul li.register-btn-container a:hover {
+  transform: scale(1.1); /* Slight size increase */
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.4); /* Hover neumorphism effect */
+  background-color: #ffd700; /* Slight color change on hover */
+  animation: bubble 0.6s ease-in-out; /* Bubble effect */
+}
+
+
+/* General Scrollbar Styling */
+body::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+  background-color: #f0f0f0; /* Background of the scrollbar track */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #000000; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners for the scrollbar thumb */
+  border: 3px solid #f0f0f0; /* Adds a border to the scrollbar thumb */
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #ffcc00; /* Darker shade when hovered */
+}
+
+/* Scrollbar Track Styling */
+body::-webkit-scrollbar-track {
+  background-color: #515151; /* Background of the scrollbar track */
+  border-radius: 10px;
+}
+
+
+
+
+
+/* Content Sections */
+/* Hero Section */
+.content-section {
+  position: relative;
+  padding: 100px 60px;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  overflow: hidden;
+  margin-top: -60px; /* Shift the Havana section a bit up */
+}
+
+
+/* Typing Effect */
+.typing-effect {
+  font-size: 3.5rem;
+
+  font-family: 'Roboto', sans-serif;
+  white-space: nowrap; /* Prevents line breaks */
+  overflow: hidden; /* Hides the text that's outside the element width */
+  border-right: 4px solid #ffcc00; /* Creates a cursor effect */
+  width: 10.5ch;
+  animation: typing 2s steps(20, end), blink 0.4s step-end infinite;
+}
+
+.content-section h2 {
+  font-size: 4rem;
+  margin-bottom: 15px;
+  color:  #ffffff;
+  ;
+}
+
+
+
+.content-section p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #ffffff;
+  max-width: 600px;
+}
+
+/* Main Content Section */
+.content {
+  color: #ffffff;
+  text-align: left; /* Align text to the left */
+  max-width: 600px; /* Optional: Limit the width for better readability */
+}
+.content h1 {
+  font-size: 5rem;
+
+}
+
+
+
+/* Typing Animation */
+@keyframes typing {
+  from {
+      width: 0;
+  }
+  to {
+      width: 10.5ch; /* Adjust to fit the text length */
+  }
+}
+
+
+
+/* Paragraph Styling */
+.content p {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-top: -30px;
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in-out forwards;
+  animation-delay: 2s; /* Starts after typing effect finishes */
+}
+
+
+
+/* Accessibility for Smaller Screens */
+@media (max-width: 768px) {
+  .content h1 {
+      font-size: 2.5rem;
+  }
+
+  .content p {
+      font-size: 1.2rem;
+  }
+
+  .register-btn {
+      font-size: 1rem;
+      padding: 8px 16px;
+  }
+
+
+
+  nav ul {
+      flex-direction: column;
+
+  }
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(10%);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+
+
+
+
+
+@keyframes pulse {
+  0% {
+      transform: scale(1);
+      box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+  }
+  50% {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(255, 204, 0.7);
+  }
+  100% {
+      transform: scale(1);
+      box-shadow: 0 0 10px rgba(255, 204, 0.5);
+  }
+}
+
+.register-btn-container a {
+  animation: pulse 1.5s infinite;
+}
+
+#container3D canvas {
+  width: 100vw !important;
+  height: 100vh !important;
+  position: fixed;
+  top: 10;
+  left: 0;
+}
+
+/* Content Section (About Section) */
+#about {
+  opacity: 0; /* Initially hidden */
+  transform: translateY(30px) scale(0.95); /* Start below and slightly smaller */
+  transition: transform 3s ease, opacity 3s ease; /* Smooth transition */
+}
+
+/* When the About section comes into view */
+#about.in-view {
+  opacity: 1; /* Make it visible */
+  transform: translateY(0) scale(1); /* Slide up and zoom in */
+}
+
+/* Timer Style */
+/* Timer Style */
+#timer-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+#timer {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffcc00;
+}
+
+#timer span {
+  display: inline-block;
+  min-width: 10px;
+  padding: 4px;
+  border-radius: 5px;
+  background-color: #333;
+  color: #fff;
+  margin: 5px;
+}
+
+
+#event-start-text {
+  font-size: 1.5rem;
+  color: #ffcc00;
+  margin-bottom: 10px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  animation: fadeIn 1.5s ease-in-out; /* Optional fade-in effect */
+}
+
+
+/* Hamburger Menu Styling */
+.hamburger-menu {
+  display: none; /* Hidden on large screens */
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  position: fixed;
+  top: 20px; /* Positioned in the top left */
+  left: 20px;
+  z-index: 3;
+}
+
+.hamburger-menu span {
+  width: 30px;
+  height: 3px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Mobile-Specific Navigation Styling */
+@media (max-width: 768px) {
+  .hamburger-menu {
+      display: flex; /* Show hamburger menu on smaller screens */
+  }
+
+  nav ul {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      left: -100%; /* Hidden off-screen initially */
+      height: 80vh;
+      width: 200px;
+      background-color: rgba(0, 0, 0, 0.95);
+      padding: 20px;
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+      transition: left 0.3s ease; /* Slide-in effect */
+      z-index: 2;
+  }
+
+  nav ul.active {
+      left: 0; /* Slide into view */
+  }
+
+  nav ul li {
+      margin: 20px 0; /* Spacing between menu items */
+  }
+
+  nav ul li a {
+      color: #000000;
+      font-size: 1.2rem;
+      text-decoration: none;
+      transition: color 0.3s ease;
+  }
+
+  nav ul li a:hover {
+      color: #ffcc00; /* Highlight effect */
+  }
+
+  /* Hamburger Animation - Close */
+  .hamburger-menu.open span:nth-child(1) {
+      transform: rotate(45deg) translateY(7px);
+  }
+
+  .hamburger-menu.open span:nth-child(2) {
+      opacity: 0; /* Hide the middle bar */
+  }
+
+  .hamburger-menu.open span:nth-child(3) {
+      transform: rotate(-45deg) translateY(-7px);
+  }
+}
+
+/* Gallery Section */
+.gallery-section {
+  position: relative;
+  padding: 100px 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.gallery-section h2 {
+  font-size: 3rem;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #fff;
+}
+
+/* Horizontal Scrolling Gallery */
+.gallery-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 20px;
+  margin-top: 30px;
+  z-index: 10;
+}
+
+/* Hide scrollbars for WebKit browsers */
+.gallery-container::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery-container img {
+  height: 200px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+}
+
+/* Hover Effect on Images */
+.gallery-container img:hover {
+  transform: scale(1.2); /* Zoom effect */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  filter: brightness(1.2); /* Slight brightness increase */
+}
+
+
+/* Scroll-Up Button */
+.scroll-up-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.8);
+  color: #000;
+  border: 2px solid #ffcc00;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1000;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(100px); /* Hidden by default */
+  pointer-events: none;
+}
+
+/* Button Visibility */
+.scroll-up-btn.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+/* Hover Effect */
+.scroll-up-btn:hover {
+  background: #ffcc00;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
