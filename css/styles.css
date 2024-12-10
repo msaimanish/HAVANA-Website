@@ -157,7 +157,7 @@ body::-webkit-scrollbar-track {
   white-space: nowrap; /* Prevents line breaks */
   overflow: hidden; /* Hides the text that's outside the element width */
   border-right: 4px solid #ffcc00; /* Creates a cursor effect */
-  width: 10.5ch;
+  width: 11ch;
   animation: typing 2s steps(20, end), blink 0.4s step-end infinite;
 }
 
@@ -196,7 +196,7 @@ body::-webkit-scrollbar-track {
       width: 0;
   }
   to {
-      width: 10.5ch; /* Adjust to fit the text length */
+      width: 11ch; /* Adjust to fit the text length */
   }
 }
 
