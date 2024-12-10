@@ -1,3 +1,3 @@
 # HAVANA 2025
 
-Website for thee upcoming event.
+Website for the upcoming event.
