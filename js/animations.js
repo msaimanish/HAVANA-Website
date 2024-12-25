@@ -39,19 +39,7 @@ hamburgerMenu.addEventListener("click", () => {
     navMenu.classList.toggle("active"); // Show/hide the navigation menu
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    const galleryItems = document.querySelectorAll(".gallery-item");
-    galleryItems.forEach((item, index) => {
-        item.style.setProperty("--item-index", index);
-    });
-});
 
-document.addEventListener("DOMContentLoaded", () => {
-    const galleryItems = document.querySelectorAll(".gallery-item");
-    galleryItems.forEach((item, index) => {
-        item.style.setProperty("--item-index", index);
-    });
-});
 
 // Scroll-Up Button
 const scrollUpBtn = document.getElementById("scroll-up");
@@ -73,3 +61,49 @@ scrollUpBtn.addEventListener("click", () => {
     });
 });
 
+// Smooth Scroll to Sections
+document.querySelectorAll('nav ul li a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
+
+
+document.querySelector('a[href="index.html"]').addEventListener('click', function(event) {
+    event.preventDefault();
+    window.location.href = 'index.html';
+});
+
+document.querySelector('a[href="event-details.html"]').addEventListener('click', function(event) {
+    event.preventDefault();
+    window.location.href = 'event-details.html';
+});
+
+document.querySelector('a[href="our-team.html"]').addEventListener('click', function(event) {
+    event.preventDefault();
+    window.location.href = 'our-team.html';
+});
+
+document.querySelector('.register-btn-container a').addEventListener('click', function(event) {
+    event.preventDefault();  // Prevent default behavior
+    window.open('https://example.com/registration', '_blank');  // Opens in a new tab
+});
+
+document.querySelector('a[href="sponsors.html"]').addEventListener('click', function(event) {
+    event.preventDefault();
+    window.location.href = 'sponsors.html';
+});
+
+window.addEventListener('load', function() {
+    // Wait 2 seconds (to let the loader animation play)
+    setTimeout(function() {
+      // Add the 'loaded' class to body to hide the loader and show the content
+      document.body.classList.add('loaded');
+    }, 2000); // 2 seconds
+  });
+  
