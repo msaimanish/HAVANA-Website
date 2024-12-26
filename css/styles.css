@@ -22,34 +22,44 @@ body {
 } */
 /* Custom Cursor */
 #custom-cursor {
-  width: 20px;
-  height: 20px;
-  border: 3px solid #ffff33;
+  width: 15px;
+  height: 15px;
+  border: 2px solid #ffff33;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.5);
   position: fixed;
   pointer-events: none;
-  z-index: 1000;
+  z-index: 9999;
   transform: translate(-50%, -50%);
   transition: transform 0.1s ease-out, background-color 0.3s ease;
+}
+
+/* Hide Navigation on Mobile */
+@media (max-width: 768px) {
+  /* Hide main navigation by default on mobile */
+  nav {
+    display: none; /* Hide the navigation bar by default */
+}
+
 }
 
 
 
 /* Navigation */
-
 nav ul {
   list-style: none;
   margin: 0;
   padding: 10px 20px;
   display: flex;
-  justify-content: flex-end; /* Aligns the navigation items to the right */
   gap: 20px;
+  flex-wrap: wrap;
   position: fixed;
-  top: 20px;
-  right: 20px; /* Moves the navigation to the right */
+  top: 35px; /* Position from the top */
+  left: 32%; /* Position from the left */
   z-index: 2;
+  cursor: none;
 }
+
 
 nav ul li {
   position: relative;
@@ -57,27 +67,28 @@ nav ul li {
 
 nav ul li a {
   text-decoration: none;
-  color: #000000;
-  font-size: 1rem; /* Smaller font size */
-  font-family: 'Roboto', sans-serif; /* Robotic style font */
+  color: #ffffff;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
-  padding: 8px 16px; /* Smaller padding */
+  padding: 8px 16px;
   border-radius: 30px;
-  background-color: #ffffff;
-  box-shadow: 5px 5px 10px rgba(162, 14, 14, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.3); /* Neumorphic shadow effect */
+  background-color: #000000;
+  box-shadow: 5px 5px 10px rgba(162, 14, 14, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.3);
   transition: color 0.3s ease, text-shadow 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
   cursor: none;
 }
 
 /* Hover effect with bubble animation */
 nav ul li a:hover {
-  color: #ffcc00; /* Electric yellow */
-  text-shadow: 0 0 8px rgba(255, 204, 0, 0.7), 0 0 20px rgba(255, 204, 0, 0.5); /* Glow effect */
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.4); /* Hover neumorphism effect */
-  transform: scale(1.1); /* Slight size increase */
-  animation: bubble 0.6s ease-in-out; /* Bubble effect */
+  color: #ffcc00;
+  text-shadow: 0 0 8px rgba(255, 204, 0, 0.7), 0 0 20px rgba(255, 204, 0, 0.5);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
+  animation: bubble 0.6s ease-in-out;
 }
+
 
 
 
@@ -157,7 +168,7 @@ body::-webkit-scrollbar-track {
   white-space: nowrap; /* Prevents line breaks */
   overflow: hidden; /* Hides the text that's outside the element width */
   border-right: 4px solid #ffcc00; /* Creates a cursor effect */
-  width: 10.5ch;
+  width: 10.9ch;
   animation: typing 2s steps(20, end), blink 0.4s step-end infinite;
 }
 
@@ -196,7 +207,7 @@ body::-webkit-scrollbar-track {
       width: 0;
   }
   to {
-      width: 10.5ch; /* Adjust to fit the text length */
+      width: 10.9ch; /* Adjust to fit the text length */
   }
 }
 
@@ -217,7 +228,11 @@ body::-webkit-scrollbar-track {
 /* Accessibility for Smaller Screens */
 @media (max-width: 768px) {
   .content h1 {
-      font-size: 2.5rem;
+      font-size: 2.3rem;
+  }
+
+  .content {
+      margin: 0 -20px; /* Add margin to the content */
   }
 
   .content p {
@@ -295,7 +310,6 @@ body::-webkit-scrollbar-track {
 }
 
 /* Timer Style */
-/* Timer Style */
 #timer-container {
   text-align: center;
   margin-top: 50px;
@@ -328,79 +342,133 @@ body::-webkit-scrollbar-track {
 }
 
 
-/* Hamburger Menu Styling */
+/* Hamburger Menu */
 .hamburger-menu {
-  display: none; /* Hidden on large screens */
-  flex-direction: column;
-  gap: 6px;
-  cursor: pointer;
   position: fixed;
-  top: 20px; /* Positioned in the top left */
+  top: 35px;
   left: 20px;
-  z-index: 3;
+  z-index: 1000;  /* Ensure the hamburger is above other elements */
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 25px;
+  cursor: none;
 }
 
-.hamburger-menu span {
-  width: 30px;
-  height: 3px;
-  background-color: #ffffff;
-  border-radius: 2px;
+.hamburger-menu .line {
+  width: 100%;
+  height: 4px;
+  background-color: #fff;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Mobile-Specific Navigation Styling */
-@media (max-width: 768px) {
-  .hamburger-menu {
-      display: flex; /* Show hamburger menu on smaller screens */
-  }
+.hamburger-menu.active .line1 {
+  transform: rotate(45deg) translateY(9px);
+}
 
-  nav ul {
-      display: flex;
-      flex-direction: column;
-      position: fixed;
-      top: 0;
-      left: -100%; /* Hidden off-screen initially */
-      height: 80vh;
-      width: 200px;
-      background-color: rgba(0, 0, 0, 0.95);
-      padding: 20px;
-      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
-      transition: left 0.3s ease; /* Slide-in effect */
-      z-index: 2;
-  }
+.hamburger-menu.active .line2 {
+  opacity: 0;
+}
 
-  nav ul.active {
-      left: 0; /* Slide into view */
-  }
+.hamburger-menu.active .line3 {
+  transform: rotate(-45deg) translateY(-9px);
+}
 
-  nav ul li {
-      margin: 20px 0; /* Spacing between menu items */
-  }
+/* Dropdown Menu */
+.dropdown-menu {
+  display: none;
+  top: 60px;
+  left: 20px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px #000000, -5px -10px 20px #000000;
+  z-index: 1000;
+  background: #000000; /* Base color for neumorphism */
+  display: none; /* Initially hidden */
+  flex-direction: column; /* Stack items vertically */
+  padding: 20px;
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  cursor: none;
+}
 
-  nav ul li a {
-      color: #000000;
-      font-size: 1.2rem;
-      text-decoration: none;
-      transition: color 0.3s ease;
-  }
+.dropdown-menu a {
+  display: block;
+  padding: 10px;
+  margin: 10px 0; /* Space between items */
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  background: #000000;
+  border-radius: 10px;
+  box-shadow: 10px 10px 20px #000000, -10px -10px 20px #000000;
+  transition: all 0.3s ease;
+  cursor: none;
+}
 
-  nav ul li a:hover {
-      color: #ffcc00; /* Highlight effect */
-  }
+.dropdown-menu a:hover {
+  background-color: #555;
+  
+}
 
-  /* Hamburger Animation - Close */
-  .hamburger-menu.open span:nth-child(1) {
-      transform: rotate(45deg) translateY(7px);
-  }
+.dropdown-menu.active {
+  display: block;
+  box-shadow: inset 5px 5px 10px #000000, inset -5px -5px 10px #000000;
+}
 
-  .hamburger-menu.open span:nth-child(2) {
-      opacity: 0; /* Hide the middle bar */
-  }
+/* Show Dropdown Menu */
+.dropdown-menu.open {
+  display: flex;
+}
 
-  .hamburger-menu.open span:nth-child(3) {
-      transform: rotate(-45deg) translateY(-7px);
+/* Styling the Register Now Button in the Dropdown */
+.dropdown-menu a.register-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff; /* Text color */
+  text-decoration: none;
+  background: linear-gradient(135deg, #ff7f50, #ff4500); /* Gradient background */
+  border-radius: 25px;
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.3), -6px -6px 10px rgba(255, 255, 255, 0.5); /* Neumorphic shadow */
+  margin: 10px auto; /* Center align within dropdown */
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  width: 80%; /* Adjust width as needed */
+}
+
+/* Hover Effect for Register Now Button */
+.dropdown-menu a.register-btn:hover {
+  background: linear-gradient(135deg, #ff6347, #ff0000); /* Brighter gradient */
+  box-shadow: 0 0 20px rgba(255, 69, 0, 0.8), 0 0 40px rgba(255, 69, 0, 0.5); /* Glowing effect */
+  transform: scale(1.1); /* Slight scaling effect */
+}
+
+/* Active State for Register Now Button */
+.dropdown-menu a.register-btn:active {
+  box-shadow: inset 6px 6px 10px rgba(0, 0, 0, 0.3), inset -6px -6px 10px rgba(255, 255, 255, 0.5); /* Neumorphic pressed effect */
+  transform: scale(0.95); /* Shrink slightly on click */
+}
+
+/* Pulsing Effect (Optional for Attention) */
+@keyframes pulse-register {
+  0%, 100% {
+      box-shadow: 0 0 15px rgba(255, 69, 0, 0.5), 0 0 30px rgba(255, 69, 0, 0.3);
+  }
+  50% {
+      box-shadow: 0 0 25px rgba(255, 69, 0, 0.8), 0 0 50px rgba(255, 69, 0, 0.5);
   }
 }
+
+.dropdown-menu a.register-btn {
+  animation: pulse-register 2s infinite; /* Pulsing animation */
+}
+
+
 
 
 
@@ -419,7 +487,7 @@ body::-webkit-scrollbar-track {
   align-items: center;
   justify-content: center;
   font-size: 2rem;
-  cursor: pointer;
+  cursor: none;
   z-index: 1000;
   transition: opacity 0.3s ease, transform 0.3s ease;
   opacity: 0;
@@ -509,14 +577,27 @@ body::-webkit-scrollbar-track {
 
 /* Logo Styling */
 .logo-container {
-  position: absolute;
-  top: 20px;
-  left: 60px;
-  z-index: 1000; /* To ensure it stays on top of other elements */
+  position: fixed;
+  top: 0px;
+  left: 90px;
+  z-index: 1; /* To ensure it stays on top of other elements */
+}
+
+.logo-container2 {
+  position: fixed;
+  top: -30px;
+  right: 90px;
+  z-index: 1; /* To ensure it stays on top of other elements */
+}
+
+@media (max-width: 768px) {
+  .logo-container2 {
+      display: none;
+  }
 }
 
 .logo {
-  width: 50px;  /* Adjust the width as per your logo size */
+  width: 170px;  /* Adjust the width as per your logo size */
   height: auto;
 }
 
@@ -707,3 +788,162 @@ body::-webkit-scrollbar-track {
 .loaded #content {
   display: block;
 }
+
+
+/* Split Footer Styles */
+.split-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between; /* Space between the two boxes */
+  align-items: stretch; /* Ensure both boxes stretch to the same height */
+  z-index: 1000;
+  background-color: transparent; /* Transparent gap background */
+  height: 50px; /* Fixed height for the footer */
+  cursor: none;
+}
+
+/* Equal Width for Footer Boxes */
+.footer-left-box,
+.footer-right-box {
+  border-radius: 20px;
+  flex: 1; /* Equal width for both boxes */
+  border: 2px solid #ffcc00;
+  border-bottom: none; /* Remove visible lower border */
+  padding: 10px 20px;
+  text-align: center; /* Center-align the content */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the content horizontally */
+  background-color:rgba(19, 19, 19, 0.9);
+  cursor: none;
+}
+
+/* Remove Borders on Edges */
+.footer-left-box {
+  border-left: none; /* Remove left border */
+}
+
+.footer-right-box {
+  border-right: none; /* Remove right border */
+}
+
+/* Gap Between Footer Boxes */
+.footer-gap {
+  width: 300px; /* Size of the gap */
+  background: transparent; /* Transparent gap background */
+}
+
+/* Footer Text and Links */
+.footer-left-box p {
+  margin: 0;
+}
+
+.footer-left-box a,
+.footer-right-box a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  cursor: none;
+}
+
+.footer-left-box a:hover,
+.footer-right-box a:hover {
+  cursor: none;
+}
+
+/* Social Media Icons */
+.footer-right-box .social-icon {
+  width: 24px;
+  height: 24px;
+  flex-wrap: wrap;
+  transition: transform 0.3s ease;
+  margin: 0 5px;
+  cursor: none;
+}
+
+.footer-right-box .social-icon:hover {
+  transform: scale(1.2);
+}
+
+/* Ensures Footer Stays at Bottom */
+body {
+  margin: 0; /* Remove default margin to prevent page shifting */
+  padding-bottom: 60px; /* Match footer height to prevent overlap */
+  box-sizing: border-box; /* Ensure padding doesn’t break layout */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1400px) {
+  .split-footer {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .footer-left-box {
+    display: none; /* Hide the left box on mobile */
+  }
+  .footer-right-box {
+      margin-bottom: 0px;
+      border-right: 2px solid #ffcc00; /* Add border to the right */
+  }
+  .footer-gap {
+      width: 0; /* Remove gap on mobile */
+      height: 0; /* Remove gap height on mobile */
+  }
+}
+
+/* Navigation for Left Footer Box */
+.footer-left-box ul {
+  list-style: none;
+  margin: 0;
+  padding: 10px 20px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  position: relative; /* Adjusted from 'fixed' to 'relative' */
+  z-index: 2;
+  cursor: none; /* Enable cursor for links */
+}
+
+/* Style for the button inside the list */
+.footer-left-box ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 8px 16px;
+  border-radius: 30px;
+  box-shadow: 5px 5px 10px rgba(162, 14, 14, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.3);
+  transition: color 0.3s ease, text-shadow 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect with bubble animation */
+.footer-left-box ul li a:hover {
+  color: #ffcc00;
+  text-shadow: 0 0 8px rgba(255, 204, 0, 0.7), 0 0 20px rgba(255, 204, 0, 0.5);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
+  animation: bubble 0.6s ease-in-out;
+}
+
+
+
+/* Add bubble animation keyframes */
+@keyframes bubble {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.1);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+

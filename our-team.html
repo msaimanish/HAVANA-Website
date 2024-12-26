@@ -10,6 +10,13 @@
 </head>
 
 <body>
+    <div class="logo-container">
+        <img src="images/gitam.png" alt="Havana 2025 Logo" class="logo">
+    </div>
+
+    <div class="logo-container2">
+        <img src="images/g_electra.png" alt="Havana 2025 Logo" class="logo">
+    </div>
     <div id="loader">
         <div class="svg-frame">
             <svg style="--i:0;--j:0;">
@@ -77,8 +84,7 @@
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="event-details.html">Events</a></li>
-            <li><a href="sponsors.html">Sponsors</a></li>
-            <li><a href="our-team.html">Our team</a></li>
+            <li><a href="our-team.html">About Us</a></li>
 
             <li class="register-btn-container">
                 <a href="https://example.com/registration" target="_blank" rel="noopener">
@@ -156,7 +162,51 @@
             <!-- More team cards can be added here -->
         </div>
           
+           <!-- Hamburger Menu (3 lines that change to X when clicked) -->
+    <div class="hamburger-menu" id="hamburger-menu" onclick="toggleMenu()">
+        <span class="line line1"></span>
+        <span class="line line2"></span>
+        <span class="line line3"></span>
+    </div>
 
+    <!-- Dropdown Menu -->
+    <div class="dropdown-menu" id="dropdown-menu">
+        <a href="index.html">Home</a>
+        <a href="event-details.html">Events</a>
+        <a href="our-team.html">About Us</a>
+        <a href="index.html">Accommodation</a>
+        <a href="index.html">Contact Us</a>
+        <a href="https://example.com/registration" rel="noopener" class="register-btn">Register Now</a>
+    </div>
+
+
+    <footer class="split-footer">
+
+        
+
+        <div class="footer-left-box">
+                <ul>
+                    <li><a href="index.html">Accomodation</a></li>
+                    <li><a href="index.html">Contact Us</a></li>
+                    
+                </ul>
+        </div>
+        <div class="footer-gap"></div> <!-- This will create a gap between the left and right sections -->
+        <div class="footer-right-box">
+            <a href="https://facebook.com" rel="noopener" aria-label="Facebook">
+                <img src="images/facebook.png" alt="Facebook" class="social-icon">
+            </a>
+            <a href="https://twitter.com" rel="noopener" aria-label="Twitter">
+                <img src="images/twitter.png" alt="Twitter" class="social-icon">
+            </a>
+            <a href="https://instagram.com" rel="noopener" aria-label="Instagram">
+                <img src="images/instagram.png" alt="Instagram" class="social-icon">
+            </a>
+            <a href="https://linkedin.com" rel="noopener" aria-label="Linkedin">
+                <img src="images/linkedin.png" alt="Linkedin" class="social-icon">
+            </a>
+        </div>
+    </footer>
 
 
     </main>

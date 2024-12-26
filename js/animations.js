@@ -94,10 +94,7 @@ document.querySelector('.register-btn-container a').addEventListener('click', fu
     window.open('https://example.com/registration', '_blank');  // Opens in a new tab
 });
 
-document.querySelector('a[href="sponsors.html"]').addEventListener('click', function(event) {
-    event.preventDefault();
-    window.location.href = 'sponsors.html';
-});
+
 
 window.addEventListener('load', function() {
     // Wait 2 seconds (to let the loader animation play)
@@ -107,3 +104,9 @@ window.addEventListener('load', function() {
     }, 2000); // 2 seconds
   });
   
+  function toggleMenu() {
+    var menu = document.getElementById('dropdown-menu');
+    var hamburger = document.getElementById('hamburger-menu');
+    menu.classList.toggle('active');
+    hamburger.classList.toggle('active');
+}
