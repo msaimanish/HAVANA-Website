@@ -55,8 +55,8 @@ nav ul {
   flex-wrap: wrap;
   position: fixed;
   top: 35px; /* Position from the top */
-  left: 32%; /* Position from the left */
-  z-index: 2;
+  left: 29%; /* Position from the left */
+  z-index: 1000;
   cursor: none;
 }
 
@@ -389,7 +389,7 @@ body::-webkit-scrollbar-track {
   flex-direction: column; /* Stack items vertically */
   padding: 20px;
   transition: all 0.3s ease-in-out;
-  position: absolute;
+  position: fixed;
   cursor: none;
 }
 
@@ -488,7 +488,7 @@ body::-webkit-scrollbar-track {
   justify-content: center;
   font-size: 2rem;
   cursor: none;
-  z-index: 1000;
+  z-index: 1001;
   transition: opacity 0.3s ease, transform 0.3s ease;
   opacity: 0;
   transform: translateY(100px); /* Hidden by default */
@@ -579,15 +579,15 @@ body::-webkit-scrollbar-track {
 .logo-container {
   position: fixed;
   top: 0px;
-  left: 90px;
-  z-index: 1; /* To ensure it stays on top of other elements */
+  left: 81px;
+  z-index: 11; /* To ensure it stays on top of other elements */
 }
 
 .logo-container2 {
   position: fixed;
   top: -30px;
   right: 90px;
-  z-index: 1; /* To ensure it stays on top of other elements */
+  z-index: 1000; /* To ensure it stays on top of other elements */
 }
 
 @media (max-width: 768px) {
@@ -905,7 +905,7 @@ body {
   gap: 20px;
   flex-wrap: wrap;
   position: relative; /* Adjusted from 'fixed' to 'relative' */
-  z-index: 2;
+  z-index: 20000;
   cursor: none; /* Enable cursor for links */
 }
 

@@ -1,0 +1,118 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px;
+    margin-top: 150px; /* Add space below navbar */
+    margin-left: 180px;
+}
+
+.buttons-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 150px;
+}
+
+.buttons-column button {
+    padding: 16px 27px;
+    border: none;
+    background-color: #FFD700; /* Yellow background */
+    color: #000; /* Black text */
+    border-radius: 100px;
+    cursor: none;
+    font-size: 18px;
+    text-align: left;
+    transition: background-color 0.3s, color 0.3s;
+    flex-wrap: wrap;
+}
+
+.buttons-column button:hover {
+    background-color: #000; /* Black background */
+    color: #ffffff; /* Yellow text */
+}
+
+.display-box {
+    flex: 1;
+    margin-left: 100px;
+    margin-right: 200px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 18px;
+    display: none; /* Initially hidden */
+    height: 410px; /* Height for visual structure */
+    color: #ffffff; /* Text color */
+    overflow-y: auto; /* Add vertical scrollbar */
+    box-sizing: border-box; /* Ensure padding doesn't affect the width */
+}
+
+/* Scrollbar styles for modern browsers */
+.display-box::-webkit-scrollbar {
+    width: 8px; /* Scrollbar width */
+}
+
+.display-box::-webkit-scrollbar-thumb {
+    background-color: #FFD700; /* Yellow thumb for scrollbar */
+    border-radius: 10px; /* Rounded scrollbar thumb */
+}
+
+.display-box::-webkit-scrollbar-thumb:hover {
+    background-color: #FFA500; /* Darker yellow on hover */
+}
+
+.display-box::-webkit-scrollbar-track {
+    background: #000; /* Black track background */
+}
+
+.buttons-column button.active-button {
+    background-color: #000; /* Black background */
+    color: #FFD700; /* Yellow text */
+}
+
+.active-box {
+    display: block;
+}
+
+@media (max-width: 1100px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 100px; /* Adjust for mobile */
+        margin-left: 10px;
+    }
+
+    .buttons-column {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .buttons-column button { /* Buttons take half the width */
+        text-align: center;
+        padding: 10px 20px;
+        font-size: 18px;
+    }
+
+    .display-box {
+        width: 90%; /* Use a relative width for mobile */
+        margin: 20px auto;
+        height: 500px;
+    }
+}
+
+@media (max-width: 790px) {
+
+    .display-box {
+        width: 90%; /* Slightly larger width for very small screens */
+        margin: 20px auto; /* Center the box */
+        height: 500px;
+    }
+}
