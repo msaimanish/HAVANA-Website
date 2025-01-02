@@ -89,6 +89,11 @@ document.querySelector('a[href="our-team.html"]').addEventListener('click', func
     window.location.href = 'our-team.html';
 });
 
+document.querySelector('a[href="about_us.html"]').addEventListener('click', function(event) {
+    event.preventDefault();
+    window.location.href = 'about_us.html';
+});
+
 document.querySelector('.register-btn-container a').addEventListener('click', function(event) {
     event.preventDefault();  // Prevent default behavior
     window.open('https://example.com/registration', '_blank');  // Opens in a new tab

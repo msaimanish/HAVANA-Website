@@ -55,7 +55,7 @@ nav ul {
   flex-wrap: wrap;
   position: fixed;
   top: 35px; /* Position from the top */
-  left: 29%; /* Position from the left */
+  left: 24%; /* Position from the left */
   z-index: 1000;
   cursor: none;
 }
