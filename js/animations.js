@@ -96,7 +96,7 @@ document.querySelector('a[href="about_us.html"]').addEventListener('click', func
 
 document.querySelector('.register-btn-container a').addEventListener('click', function(event) {
     event.preventDefault();  // Prevent default behavior
-    window.open('https://example.com/registration', '_blank');  // Opens in a new tab
+    window.open('event-details.html', '_blank');  // Opens in a new tab
 });
 
 
