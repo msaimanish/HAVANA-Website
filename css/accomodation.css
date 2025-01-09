@@ -51,6 +51,7 @@ body {
     color: #ffffff; /* Text color */
     overflow-y: auto; /* Add vertical scrollbar */
     box-sizing: border-box; /* Ensure padding doesn't affect the width */
+    background-color: rgba(27, 27, 27, 0.8); /* Semi-transparent black background */   
 }
 
 /* Scrollbar styles for modern browsers */

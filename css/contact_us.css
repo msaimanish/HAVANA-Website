@@ -1,0 +1,132 @@
+/* Header Section */
+.contact-header {
+    text-align: center;
+    padding: 100px 20px 50px; /* Adjusted for fixed navbar */
+    background: linear-gradient(135deg, #ffdd57, #444);
+    color: #fff;
+    border-bottom: 4px solid #ffdd57;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+    cursor: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0px;
+    padding: 0;
+    background: #000;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Contact Us Section */
+.contact-us-container {
+    padding: 100px 20px 40px; /* Adjusted for fixed navbar */
+    text-align: center;
+}
+
+.contact-us-container h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px rgba(255, 221, 87, 0.8);
+}
+
+.contact-us-container .description {
+    font-size: 1rem;
+    color: #aaa;
+    margin-bottom: 20px;
+}
+
+/* Form Container */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    background: #222;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 8px 15px rgba(255, 255, 255, 0.1);
+    width: 100%;
+    max-width: 500px;
+    text-align: left;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #ffdd57;
+}
+
+form input,
+form textarea {
+    width: 96.5%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    background: #333;
+    color: #fff;
+    font-size: 1rem;
+    box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.1);
+    cursor: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-us-container h1 {
+        font-size: 1.8rem;
+    }
+
+    .contact-us-container .description {
+        font-size: 0.9rem;
+    }
+
+    form {
+        width: 90%;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer ul {
+        margin-bottom: 10px;
+    }
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    background: #444;
+    box-shadow: 0 0 10px #ffdd57, inset 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+form .submit-btn {
+    background: #ffdd57;
+    color: #000;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: none;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+form .submit-btn:hover {
+    background: #fff;
+    color: #000;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+
+
