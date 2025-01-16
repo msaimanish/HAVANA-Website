@@ -98,10 +98,6 @@ header .menu{
     border-radius: 10px;
     margin-top: 30px;
 }
-.slider .list .item .content p:nth-child(3){
-    text-transform: uppercase;
-    letter-spacing: 10px;
-}
 
 .slider .list .item .content p {
     margin-top: 0; /* Ensure no extra margin at the top */
@@ -111,7 +107,7 @@ header .menu{
 }
 
 .slider .list .item .content h2{
-    font-size: 100px;
+    font-size: 80px;
     margin: 0;
 }
 .slider .list .item.active{
@@ -339,28 +335,114 @@ header .menu{
 
 /*.......EXPLORE.....*/
 
-
+/* Styling for the buttons inside slider */
 .slider button {
     margin: 5px;
     padding: 10px 20px;
-    cursor: none;
+    cursor: none; /* Corrected cursor */
 }
 
+/* Styling for the buttons inside slider */
+.slider button {
+    margin: 5px;
+    padding: 10px 20px;
+    cursor: pointer; /* Corrected cursor */
+}
+
+/* Main container */
 .container {
     display: none; /* Default hidden state */
     padding: 20px;
     margin-top: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
-    transition: opacity 0.3s ease; /* Smooth fade-out */
+    transition: opacity 0.3s ease; /* Smooth fade-in/out */
+    background-color: rgba(27, 27, 27, 0.8);
 }
 
+/* Visible container */
 .container.active {
     display: block;
     opacity: 1;
 }
 
+/* Hidden container */
 .container.hidden {
+    display: none;
     opacity: 0;
-    pointer-events: none; /* Prevent interactions when hidden */
+}
+
+/* Dynamic buttons container */
+.dynamic-buttons-container {
+    display: flex;
+    justify-content: center; /* Center buttons horizontally */
+    gap: 15px; /* Space between buttons */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Hidden dynamic buttons container */
+.dynamic-buttons-container.hidden {
+    display: none;
+}
+
+/* Style for dynamic buttons */
+.dynamic-button {
+    padding: 8px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border: 2px solid transparent;
+    border-radius: 100px;
+    cursor: pointer; /* Corrected cursor */
+    background-color: black;
+    color: #ffcc00;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect for buttons */
+.dynamic-button:hover {
+    background-color: #ffcc00;
+    color: black;
+    transform: scale(1.1); /* Enlarge on hover */
+}
+
+/* Special button style */
+.dynamic-button.special {
+    padding: 15px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 100px;
+    background-color: #ffcc00;
+    color: black;
+    border: 2px solid black;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect for special button */
+.dynamic-button.special:hover {
+    background-color: orange;
+    transform: scale(1.1); /* More pronounced enlargement */
+}
+
+/* Content boxes */
+.content-box {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #000000;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Hide content boxes */
+.content-box.hidden {
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.theme.active {
+    display: block;
 }

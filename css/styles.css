@@ -588,6 +588,7 @@ body::-webkit-scrollbar-track {
   top: -30px;
   right: 90px;
   z-index: 1000; /* To ensure it stays on top of other elements */
+  scale: 0.6;
 }
 
 @media (max-width: 768px) {

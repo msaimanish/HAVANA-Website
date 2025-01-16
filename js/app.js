@@ -91,18 +91,71 @@ thumbnails.forEach((thumbnail, index) => {
     });
 });
 
-// Explore Event
 function exploreEvent(themeNumber) {
-    // Hide all containers
+    // Hide all theme containers initially
     const containers = document.querySelectorAll('.container');
     containers.forEach(container => container.classList.remove('active'));
-  
-    // Show the selected container
+
+    // Hide all content boxes across all themes (containers)
+    const allBoxes = document.querySelectorAll('.content-box');
+    allBoxes.forEach(box => box.classList.add('hidden'));
+
+    // Show the selected theme container
     const selectedContainer = document.getElementById(`theme${themeNumber}`);
     if (selectedContainer) {
         selectedContainer.classList.add('active');
-        // Smooth scroll to the selected container
         selectedContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        // Now, create dynamic buttons if not already created
+        const buttonsContainer = selectedContainer.querySelector('.dynamic-buttons-container');
+        if (!buttonsContainer) {
+            createDynamicButtons(selectedContainer, themeNumber); // Pass theme number to button creation function
+        }
+
     }
 }
 
+// Function to create the dynamic buttons inside the theme container
+function createDynamicButtons(container, themeNumber) {
+    // Ensure there's a container for the buttons
+    const buttonsContainer = document.createElement('div');
+    buttonsContainer.className = 'dynamic-buttons-container';
+    container.prepend(buttonsContainer); // Prepend to make it appear at the top
+
+    // Button names and their respective actions
+    const buttonNames = [
+        { name: 'About', boxId: `theme${themeNumber}-box1` },
+        { name: 'Timeline', boxId: `theme${themeNumber}-box2` },
+        { name: 'Rules', boxId: `theme${themeNumber}-box3` },
+        { name: 'Contact', boxId: `theme${themeNumber}-box4` }
+    ];
+
+    // Add buttons for each section
+    buttonNames.forEach(buttonInfo => {
+        const button = document.createElement('button');
+        button.textContent = buttonInfo.name;
+        button.className = 'dynamic-button';
+        button.onclick = () => toggleBoxVisibility(themeNumber, buttonInfo.boxId); // Pass theme number to toggle function
+        buttonsContainer.appendChild(button);
+    });
+
+    // Special Button (e.g., "Special Offer")
+    const specialButton = document.createElement('button');
+    specialButton.textContent = 'Special Offer';
+    specialButton.className = 'dynamic-button special';
+    specialButton.onclick = () => alert('Special Offer Button Clicked!');
+    buttonsContainer.appendChild(specialButton);
+}
+
+// Function to toggle visibility of content boxes within a specific theme
+function toggleBoxVisibility(themeNumber, boxId) {
+    // Hide all content boxes for the selected theme
+    const boxes = document.querySelectorAll(`#theme${themeNumber} .content-box`);
+    boxes.forEach(box => box.classList.add('hidden')); // Hide all boxes within the theme
+
+    // Show the selected box
+    const selectedBox = document.getElementById(boxId);
+    if (selectedBox) {
+        selectedBox.classList.remove('hidden');
+    }
+}

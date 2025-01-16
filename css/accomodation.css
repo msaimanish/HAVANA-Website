@@ -27,8 +27,8 @@ body {
     color: #000; /* Black text */
     border-radius: 100px;
     cursor: none;
-    font-size: 18px;
-    text-align: left;
+    font-size: 14px;
+    text-align: center;
     transition: background-color 0.3s, color 0.3s;
     flex-wrap: wrap;
 }
