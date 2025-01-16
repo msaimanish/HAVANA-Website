@@ -393,7 +393,7 @@ header .menu{
     font-weight: bold;
     border: 2px solid transparent;
     border-radius: 100px;
-    cursor: pointer; /* Corrected cursor */
+    cursor: none; 
     background-color: black;
     color: #ffcc00;
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
