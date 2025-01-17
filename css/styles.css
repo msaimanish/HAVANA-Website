@@ -537,8 +537,8 @@ body::-webkit-scrollbar-track {
     .logo-container-mobile {
         display: block;
         position: absolute;
-        top: -40px;
-        left: 63px;
+        top: -30px;
+        left: 98px;
         z-index: 110;
         scale: 1.2;
     }
@@ -546,10 +546,10 @@ body::-webkit-scrollbar-track {
     .logo-container3 {
       position: absolute;
       display: center;
-      top: 167px;
-      left: 50px;
+      top: 197px;
+      left: 90px;
       z-index: 110;
-      scale: 1.5;
+      scale: 1.9;
     }
 
       /* Timer Style */
@@ -559,7 +559,7 @@ body::-webkit-scrollbar-track {
   }
 
   #timer {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     font-weight: bold;
     color: #ffcc00;
   }
