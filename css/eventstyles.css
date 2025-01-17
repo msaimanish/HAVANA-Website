@@ -107,7 +107,7 @@ header .menu{
 }
 
 .slider .list .item .content h2{
-    font-size: 80px;
+    font-size: 60px;
     margin: 0;
 }
 .slider .list .item.active{
@@ -245,7 +245,7 @@ header .menu{
     background: rgba(0, 0, 0, 0.5); /* Add a semi-transparent black background */
     border-radius: 5px; /* Add rounded corners */
     position: absolute;
-    bottom: 10px;
+    bottom: 140px;
     transition: all 0.3s ease; /* Smooth transition for hover effect */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add a subtle shadow to make it stand out more */
 }
@@ -270,7 +270,7 @@ header .menu{
 @media screen and (max-width: 678px) {
     .thumbnail{
         position: absolute;
-        bottom: 50px;
+        bottom: 10px;
         z-index: 11;
         display: flex;
         gap: 10px;
@@ -290,7 +290,7 @@ header .menu{
         border-radius: 10px;
     }
     .slider .list .item .content h2{
-        font-size: 60px;
+        font-size: 40px;
     }
     #next, #prev {
         display: none;
@@ -445,4 +445,29 @@ header .menu{
 
 .theme.active {
     display: block;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+
+    .container {
+        display: none; /* Default hidden state */
+        padding: 20px;
+        margin-top: 150px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        transition: opacity 0.3s ease; /* Smooth fade-in/out */
+        background-color: rgba(27, 27, 27, 0.8);
+    }
+    .dynamic-button {
+        padding: 8px 15px; /* Smaller padding on mobile */
+        font-size: 14px; /* Reduce font size */
+        margin: 3px; /* Decrease margin for more compact layout */
+    }
+
+    .dynamic-buttons-container {
+        display: flex;
+        flex-wrap: wrap; /* Wrap buttons to avoid overflow */
+        justify-content: center; /* Center align buttons */
+    }
 }

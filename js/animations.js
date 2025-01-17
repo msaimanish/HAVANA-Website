@@ -116,5 +116,23 @@ window.addEventListener('load', function() {
     hamburger.classList.toggle('active');
 }
 
+function showBox(id, button) {
+    // Hide all boxes
+    const boxes = document.querySelectorAll('.display-box');
+    boxes.forEach(box => box.classList.remove('active-box'));
+
+    // Show the selected box
+    const selectedBox = document.getElementById(`box-${id}`);
+    if (selectedBox) {
+        selectedBox.classList.add('active-box');
+    }
+
+    // Remove active class from all buttons
+    const buttons = document.querySelectorAll('.buttons-column button');
+    buttons.forEach(btn => btn.classList.remove('active-button'));
+
+    // Add active class to the clicked button
+    button.classList.add('active-button');
+}
 
 
