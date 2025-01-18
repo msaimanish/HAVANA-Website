@@ -109,12 +109,7 @@ window.addEventListener('load', function() {
     }, 2000); // 2 seconds
   });
   
-  function toggleMenu() {
-    var menu = document.getElementById('dropdown-menu');
-    var hamburger = document.getElementById('hamburger-menu');
-    menu.classList.toggle('active');
-    hamburger.classList.toggle('active');
-}
+
 
 function showBox(id, button) {
     // Hide all boxes
@@ -156,4 +151,10 @@ window.addEventListener('scroll', () => {
     lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For mobile or negative scroll
 });
 
-
+function toggleMenu() {
+    const hamburgerMenu = document.getElementById('hamburger-menu');
+    const dropdownMenu = document.getElementById('dropdown-menu');
+    
+    hamburgerMenu.classList.toggle('active'); // Toggle hamburger icon animation
+    dropdownMenu.classList.toggle('open'); // Toggle dropdown menu visibility and animation
+}

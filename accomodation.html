@@ -112,30 +112,32 @@
             <button onclick="showBox(5, this)">Contact Us</button>
             <button class="special-button" onclick="window.location.href='https://your-link.com';">Book Accomodation</button>
         </div>
-        <div id="box-1" class="display-box active-box">            
-            <ol>
-                <li>
-                    <span style="font-weight: bold;">Accommodation Charges:</span>
-                    <p>
-                        Accommodation charges are INR 3099 3599 (Early Bird Offer (Valid till ______, ______)) per candidate for 5 days. 
-                        Maximum of 5 nights stay allowed (______ - ______). It does not include food facilities. Guests can purchase their meals 
-                        from the food court, night cafeteria, or private hostel canteens or hostel messes at subsidized rates.
-                    </p>
-                </li>
-                <li>
-                    <span style="font-weight: bold;">Timing:</span>
-                    <p>Check-in: ______ to ______ on your check-in date</p>
-                </li>
-                <li>
-                    <span style="font-weight: bold;">Cancellation Policy:</span>
-                    <p>
-                        Confirmed accommodation can be cancelled through email only. Send an email with your Acco ID and the number of members 
-                        for whom accommodation has to be cancelled, to <strong>gelectra@gitam.edu</strong>. The subject of the email should be 
-                        "Cancellation of Accommodation". For any cancellations before the deadline, 70% of the total amount shall be refunded 
-                        within 1 month after the festival. There shall be no refunds for cancellations after the deadline. Deadline for cancellation: ______.
-                    </p>
-                </li>
-            </ol>
+        <div id="box-1" class="display-box active-box">
+            <div class="accommodation-content">
+                <ol>
+                    <li>
+                        <span class="bold-text">Accommodation Charges:</span>
+                        <p>
+                            Accommodation charges are <strong>INR 3099 3599</strong> (Early Bird Offer (Valid till ______, ______)) per candidate for 5 days. 
+                            Maximum of 5 nights stay allowed (______ - ______). It does not include food facilities. Guests can purchase their meals 
+                            from the food court, night cafeteria, or private hostel canteens or hostel messes at subsidized rates.
+                        </p>
+                    </li>
+                    <li>
+                        <span class="bold-text">Timing:</span>
+                        <p>Check-in: ______ to ______ on your check-in date</p>
+                    </li>
+                    <li>
+                        <span class="bold-text">Cancellation Policy:</span>
+                        <p>
+                            Confirmed accommodation can be cancelled through email only. Send an email with your Acco ID and the number of members 
+                            for whom accommodation has to be cancelled, to <strong>gelectra@gitam.edu</strong>. The subject of the email should be 
+                            "Cancellation of Accommodation". For any cancellations before the deadline, 70% of the total amount shall be refunded 
+                            within 1 month after the festival. There shall be no refunds for cancellations after the deadline. Deadline for cancellation: ______.
+                        </p>
+                    </li>
+                </ol>
+            </div>
         </div>
         <div id="box-2" class="display-box">            <h2>Travelling to GITAM Hyderabad</h2>
         
@@ -297,43 +299,38 @@
                 ID card. You will be given the keys to your allotted rooms along with the
                 accommodation receipt.
             </p></div>
-        <div id="box-5" class="display-box"><h2 style="text-align: center; margin-bottom: 20px;">Contact Information</h2>
-        
-            <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
-                <div>
-                    <h3>M SAI KRISHNA</h3>
-                    <p><strong>Phone:</strong> +91 7995988480</p>
-                    <p><strong>Email:</strong> <a href="mailto:smotapar2@gitam.in">smotapar2@gitam.in</a></p>
+            <div id="box-5" class="display-box">
+                <h2>Contact Information</h2>
+                <div class="contact-section">
+                    <!-- Contact Card 1 -->
+                    <div class="contact-card">
+                        <h3>M SAI KRISHNA</h3>
+                        <p><strong>Phone:</strong> +91 7995988480</p>
+                        <p><strong>Email:</strong> <a href="mailto:smotapar2@gitam.in">smotapar2@gitam.in</a></p>
+                    </div>
+                    <!-- Contact Card 2 -->
+                    <div class="contact-card">
+                        <h3>G. Showry James</h3>
+                        <p><strong>Phone:</strong> +91 9912809485</p>
+                        <p><strong>Email:</strong> <a href="mailto:sgaleti@gitam.in">sgaleti@gitam.in</a></p>
+                    </div>
                 </div>
-                <div>
-                    <h3>G. Showry James</h3>
-                    <p><strong>Phone:</strong> +91 9912809485</p>
-                    <p><strong>Email:</strong> <a href="mailto:sgaleti@gitam.in">sgaleti@gitam.in</a></p>
+                <div style="text-align: center; margin-top: 20px;">
+                    <h3>General Email</h3>
+                    <p><strong>Email:</strong> <a href="mailto:gelectra@gitam.edu">gelectra@gitam.edu</a></p>
+                </div>
+                <div style="text-align: center; margin-top: 20px;">
+                    <h3>Find Us on Map</h3>
+                    <p>
+                        <a href="https://maps.app.goo.gl/6d7oFb6QGM7in1jA8" target="_blank">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Google_Maps_icon.svg/1024px-Google_Maps_icon.svg.png" 
+                                 alt="Google Maps Logo" width="20" height="20"> 
+                            View on Google Maps
+                        </a>
+                    </p>
                 </div>
             </div>
-        
-            <div style="text-align: center; margin-bottom: 20px;">
-                <h3>General Email</h3>
-                <p><strong>Email:</strong> <a href="mailto:gelectra@gitam.edu">gelectra@gitam.edu</a></p>
-            </div>
-        
-            <div style="margin-bottom: 20px;">
-                <h3>Location:</h3>
-                <p>GITAM (Deemed to be University)<br>
-                Rudraram Village, Patancheru Mandal<br>
-                Sangareddy District, Telangana – 502 329.</p>
-            </div>
-        
-            <div style="margin-bottom: 20px;">
-                <h3>Find Us on Map:</h3>
-                <p>
-                    <a href="https://maps.app.goo.gl/6d7oFb6QGM7in1jA8" target="_blank">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Google_Maps_icon.svg/1024px-Google_Maps_icon.svg.png" 
-                             alt="Google Maps Logo" width="20" height="20"> 
-                        View on Google Maps
-                    </a>
-                </p>
-            </div></div>
+            
 
 
     </div>

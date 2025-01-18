@@ -2,9 +2,9 @@
 .contact-header {
     text-align: center;
     padding: 100px 20px 50px; /* Adjusted for fixed navbar */
-    background: linear-gradient(135deg, #ffdd57, #444);
+    background: linear-gradient(135deg, #ffcc00, #444);
     color: #fff;
-    border-bottom: 4px solid #ffdd57;
+    border-bottom: 4px solid #ffcc00;
     box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
     cursor: none;
 }
@@ -57,7 +57,7 @@ form label {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
-    color: #ffdd57;
+    color: #ffcc00;
 }
 
 form input,
@@ -107,11 +107,11 @@ form input:focus,
 form textarea:focus {
     outline: none;
     background: #444;
-    box-shadow: 0 0 10px #ffdd57, inset 0 0 5px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px #ffcc00, inset 0 0 5px rgba(255, 255, 255, 0.2);
 }
 
 form .submit-btn {
-    background: #ffdd57;
+    background: #ffcc00;
     color: #000;
     border: none;
     padding: 12px 20px;

@@ -61,6 +61,99 @@ body {
 
 
 
+ol, ul {
+    margin: 0;
+    padding-left: 20px;
+    color: #000; /* Black text */
+    line-height: 1.6;
+}
+
+li {
+    margin-bottom: 15px;
+}
+
+p, h2, h3 {
+    margin: 10px 0;
+    color: #000; /* Black text */
+}
+
+h2 {
+    color: #ffd700; /* Yellow headings */
+    font-weight: bold;
+    text-align: center;
+}
+
+h3 {
+    color: #000; /* Black subheadings */
+    font-weight: bold;
+}
+
+/* Highlight Important Text */
+.bold-text,
+strong {
+    color: #ffd700; /* Yellow highlights */
+    font-weight: bold;
+}
+
+/* Links */
+a {
+    color: #ffd700;
+
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+a:hover {
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Glow effect */
+}
+
+/* Contact Page Styles */
+.contact-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.contact-card {
+    flex: 1 1 calc(50% - 20px);
+    padding: 15px;
+    border: 2px solid #ffd700; /* Yellow border */
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.contact-card h3 {
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.contact-card p {
+    margin: 5px 0;
+    color: #555; /* Slightly lighter black for readability */
+}
+
+.contact-card a {
+    color: #ffd700;
+    font-weight: bold;
+}
+
+.contact-card a:hover {
+    color: #000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+ 
+
+    .contact-section {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+
+
 .display-box {
     flex: 1;
     margin-left: 100px;
@@ -74,7 +167,7 @@ body {
     color: #ffffff; /* Text color */
     overflow-y: auto; /* Add vertical scrollbar */
     box-sizing: border-box; /* Ensure padding doesn't affect the width */
-    background-color: rgba(27, 27, 27, 0.8); /* Semi-transparent black background */   
+    background-color: rgba(34, 159, 194, 0.8); /* Semi-transparent black background */   
 }
 
 /* Scrollbar styles for modern browsers */
@@ -139,3 +232,6 @@ body {
         height: 500px;
     }
 }
+
+
+  

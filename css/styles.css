@@ -340,33 +340,37 @@ body::-webkit-scrollbar-track {
   position: fixed;
   top: 35px;
   left: 20px;
-  z-index: 1000;  /* Ensure the hamburger is above other elements */
+  z-index: 1000;
   cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 30px;
   height: 25px;
-  cursor: none;
+  transition: transform 0.5s ease-out; /* Smooth transition for the whole hamburger */
 }
 
 .hamburger-menu .line {
   width: 100%;
   height: 4px;
   background-color: #fff;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, width 0.3s ease-in-out; /* Smooth transformation */
+  transform-origin: center; /* Set the origin for rotation to the center of the lines */
 }
 
+/* Hamburger Menu Active State (Fluid X Animation) */
 .hamburger-menu.active .line1 {
-  transform: rotate(45deg) translateY(9px);
+  transform: rotate(45deg) translateY(6px); /* Slightly smaller rotation and position for a fluid feel */
+  width: 80%; /* Slightly reduced width for a more fluid, interconnected feel */
 }
 
 .hamburger-menu.active .line2 {
-  opacity: 0;
+  opacity: 0; /* Fade out smoothly */
 }
 
 .hamburger-menu.active .line3 {
-  transform: rotate(-45deg) translateY(-9px);
+  transform: rotate(-45deg) translateY(-6px); /* Slightly smaller rotation and position */
+  width: 80%; /* Matching width to line1 for a continuous flow effect */
 }
 
 /* Dropdown Menu */
@@ -377,19 +381,28 @@ body::-webkit-scrollbar-track {
   border-radius: 15px;
   box-shadow: 5px 5px 5px #000000, -5px -10px 20px #000000;
   z-index: 1000;
-  background: #000000; /* Base color for neumorphism */
-  display: none; /* Initially hidden */
-  flex-direction: column; /* Stack items vertically */
-  padding: 20px;
-  transition: all 0.3s ease-in-out;
+  background: #000000;
   position: fixed;
+  flex-direction: column;
+  padding: 20px;
+  opacity: 0; /* Initially invisible */
+  transform: translateY(-30px); /* Initial off-screen position */
+  transition: opacity 0.5s ease, transform 0.5s ease-out; /* Fluid transition for opacity and sliding */
   cursor: none;
 }
 
+/* Show Dropdown Menu with Fluid Animation */
+.dropdown-menu.open {
+  display: flex;
+  transform: translateY(0); /* Smooth slide in */
+  opacity: 1; /* Smooth fade-in */
+}
+
+/* Dropdown Menu Links */
 .dropdown-menu a {
   display: block;
   padding: 10px;
-  margin: 10px 0; /* Space between items */
+  margin: 10px 0;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
@@ -398,40 +411,86 @@ body::-webkit-scrollbar-track {
   background: #000000;
   border-radius: 10px;
   box-shadow: 10px 10px 20px #000000, -10px -10px 20px #000000;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease-in-out; /* Smooth hover transition */
   cursor: none;
+  opacity: 0; /* Start with all items invisible */
+  transform: translateY(20px); /* Position items slightly below their normal place */
 }
 
+/* Flowing Animation for Dropdown Menu Items */
+.dropdown-menu.open a {
+  animation: flowIn 0.5s ease forwards;
+}
+
+.dropdown-menu.open a:nth-child(1) {
+  animation-delay: 0.1s; /* Delay for the first item */
+}
+
+.dropdown-menu.open a:nth-child(2) {
+  animation-delay: 0.2s; /* Delay for the second item */
+}
+
+.dropdown-menu.open a:nth-child(3) {
+  animation-delay: 0.3s; /* Delay for the third item */
+}
+
+.dropdown-menu.open a:nth-child(4) {
+  animation-delay: 0.4s; /* Delay for the fourth item */
+}
+
+.dropdown-menu.open a:nth-child(5) {
+  animation-delay: 0.5s; /* Delay for the fifth item */
+}
+
+.dropdown-menu.open a:nth-child(6) {
+  animation-delay: 0.6s; /* Delay for the sixth item */
+}
+
+.dropdown-menu.open a:nth-child(7) {
+  animation-delay: 0.7s; /* Delay for the seventh item */
+}
+
+/* Flowing Animation Keyframe */
+@keyframes flowIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* Start from below */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Flow to its final position */
+  }
+}
+
+/* Hover Effect for Dropdown Links */
 .dropdown-menu a:hover {
   background-color: #555;
-  
+  transform: scale(1.05); /* Slight scaling effect for hover */
 }
 
-.dropdown-menu.active {
-  display: block;
-  box-shadow: inset 5px 5px 10px #000000, inset -5px -5px 10px #000000;
+/* Default Hamburger Menu visibility (hidden on larger screens) */
+.hamburger-menu {
+  display: none; /* Initially hide the hamburger menu */
 }
 
-/* Show Dropdown Menu */
-.dropdown-menu.open {
-  display: flex;
-}
-
-/* Styling the Register Now Button in the Dropdown */
+/* Register Now Button */
 .dropdown-menu a.register-btn {
   display: inline-block;
   padding: 12px 24px;
   font-size: 16px;
   font-weight: bold;
-  color: #000000; /* Text color */
+  color: #000000; /* Text color for the button */
   text-decoration: none;
   background: linear-gradient(135deg, #ffcc00, #ffcc00); /* Gradient background */
   border-radius: 25px;
-  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.3), -6px -6px 10px rgba(255, 255, 255, 0.5); /* Neumorphic shadow */
-  margin: 10px auto; /* Center align within dropdown */
-  transition: all 0.3s ease-in-out;
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.3), -6px -6px 10px rgba(255, 255, 255, 0.5);
+  margin: 10px auto;
+  transition: all 0.4s ease-in-out;
   text-align: center;
-  width: 70%; /* Adjust width as needed */
+  width: 70%; /* Adjust width to fit content */
+  z-index: 1001; /* Ensure the button is above other elements */
+  opacity: 1; /* Ensure visibility */
+  position: relative; /* Fixing its position relative to the dropdown */
 }
 
 /* Hover Effect for Register Now Button */
@@ -447,19 +506,32 @@ body::-webkit-scrollbar-track {
   transform: scale(0.95); /* Shrink slightly on click */
 }
 
-/* Pulsing Effect (Optional for Attention) */
+/* Pulsing Effect for Register Now Button (Optional for Attention) */
 @keyframes pulse-register {
   0%, 100% {
-      box-shadow: 0 0 15px rgba(255, 69, 0, 0.5), 0 0 30px rgba(255, 69, 0, 0.3);
+    box-shadow: 0 0 15px rgba(255, 69, 0, 0.5), 0 0 30px rgba(255, 69, 0, 0.3);
   }
   50% {
-      box-shadow: 0 0 25px rgba(255, 69, 0, 0.8), 0 0 50px rgba(255, 69, 0, 0.5);
+    box-shadow: 0 0 25px rgba(255, 69, 0, 0.8), 0 0 50px rgba(255, 69, 0, 0.5);
   }
 }
 
 .dropdown-menu a.register-btn {
   animation: pulse-register 2s infinite; /* Pulsing animation */
 }
+
+/* Make hamburger menu visible on mobile devices (screen width <= 768px) */
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: flex; /* Display hamburger menu on mobile */
+  }
+
+
+
+
+}
+
+
 
 
 
@@ -794,6 +866,7 @@ body::-webkit-scrollbar-track {
 
 
 /* Split Footer Styles */
+
 .split-footer {
   position: fixed;
   bottom: 0;
@@ -801,13 +874,15 @@ body::-webkit-scrollbar-track {
   width: 100%;
   flex-wrap: wrap;
   display: flex;
-  justify-content: space-between; /* Space between the two boxes */
-  align-items: stretch; /* Ensure both boxes stretch to the same height */
+  justify-content: space-between; 
+  align-items: stretch; 
   z-index: 1000;
-  background-color: transparent; /* Transparent gap background */
-  height: 50px; /* Fixed height for the footer */
+  background-color: transparent;
+  height: 50px; /* Adjust height as necessary */
   cursor: none;
+  transition: bottom 0.3s ease-in-out; /* Smooth transition for moving footer */
 }
+
 
 /* Equal Width for Footer Boxes */
 .footer-left-box,

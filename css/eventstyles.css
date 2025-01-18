@@ -219,7 +219,7 @@ header .menu{
     width: 150px;
     height: 220px;
     filter: brightness(.5);
-    transition: .5s;
+    transition: 1s;
     flex-shrink: 0;
 }
 
