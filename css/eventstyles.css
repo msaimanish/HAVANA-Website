@@ -238,33 +238,20 @@ header .menu{
 }
 /* Style for the slider names */
 .thumbnail .item .content {
-    font-size: 1.5rem; /* Increase font size */
+    font-size: 1.15rem; /* Increase font size */
     color: white; /* Change text color */
     padding: 10px 10px; /* Add some padding */
     background: rgba(0, 0, 0, 0.5); /* Add a semi-transparent black background */
     border-radius: 5px; /* Add rounded corners */
     position: absolute;
-    bottom: 140px;
+    bottom: 160px;
     transition: all 0.3s ease; /* Smooth transition for hover effect */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add a subtle shadow to make it stand out more */
 }
 
-/* Hover effect to make the name pop */
-.thumbnail .item .content:hover {
-    color: #FFD700; /* Change text color to gold when hovered */
-    background: rgba(0, 0, 0, 0.7); /* Darken background on hover */
-    transform: scale(1.05   ); /* Slightly enlarge the text on hover */
-}
 
-/* Adding a glow effect to the name */
-.thumbnail .item .content {
-    box-shadow: 0 0 10px rgba(255, 223, 0, 0.7); /* Glow effect */
-}
 
-.thumbnail .item .content.active {
-    color: #FFD700; /* Make the name gold if active */
-    font-size: 1.8rem; /* Make it larger when active */
-}
+
 
 @media screen and (max-width: 678px) {
     .thumbnail{
