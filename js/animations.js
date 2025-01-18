@@ -130,8 +130,6 @@ function showBox(id, button) {
     button.classList.add('active-button');
 }
 
-
-// Track the last scroll position
 let lastScrollTop = 0;
 const footer = document.querySelector('.split-footer'); // Assuming '.split-footer' is your footer class
 
@@ -139,19 +137,24 @@ const footer = document.querySelector('.split-footer'); // Assuming '.split-foot
 const threshold = 300; // Distance (in pixels) after which the footer starts disappearing
 
 window.addEventListener('scroll', function() {
-    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    // Check if the screen width is below 768px (mobile)
+    if (window.innerWidth <= 768) {
+        let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
-    // If we scroll down past the threshold, start vanishing the footer
-    if (currentScroll > threshold) {
-        let hideFooterAmount = Math.min(currentScroll - threshold, 60); // Cap the movement at 60px
-        footer.style.bottom = `-${hideFooterAmount}px`; // Move footer off screen gradually
+        // If we scroll down past the threshold, start vanishing the footer
+        if (currentScroll > threshold) {
+            let hideFooterAmount = Math.min(currentScroll - threshold, 60); // Cap the movement at 60px
+            footer.style.bottom = `-${hideFooterAmount}px`; // Move footer off screen gradually
+        } else {
+            footer.style.bottom = '0'; // Footer remains visible when below the threshold
+        }
     } else {
-        footer.style.bottom = '0'; // Footer remains visible when below the threshold
+        // Ensure footer is always visible on larger screens
+        footer.style.bottom = '0';
     }
 
     lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Prevent negative scroll values
 });
-
 
 function toggleMenu() {
     const hamburgerMenu = document.getElementById('hamburger-menu');
