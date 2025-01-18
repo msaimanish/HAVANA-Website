@@ -41,6 +41,10 @@ body {
     display: none; /* Hide the navigation bar by default */
 }
 
+  #custom-cursor {
+    display: none;
+  }
+
 }
 
 
@@ -419,21 +423,21 @@ body::-webkit-scrollbar-track {
   padding: 12px 24px;
   font-size: 16px;
   font-weight: bold;
-  color: #fff; /* Text color */
+  color: #000000; /* Text color */
   text-decoration: none;
-  background: linear-gradient(135deg, #ff7f50, #ff4500); /* Gradient background */
+  background: linear-gradient(135deg, #f9f646, #d4d726); /* Gradient background */
   border-radius: 25px;
   box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.3), -6px -6px 10px rgba(255, 255, 255, 0.5); /* Neumorphic shadow */
   margin: 10px auto; /* Center align within dropdown */
   transition: all 0.3s ease-in-out;
   text-align: center;
-  width: 80%; /* Adjust width as needed */
+  width: 70%; /* Adjust width as needed */
 }
 
 /* Hover Effect for Register Now Button */
 .dropdown-menu a.register-btn:hover {
-  background: linear-gradient(135deg, #ff6347, #ff0000); /* Brighter gradient */
-  box-shadow: 0 0 20px rgba(255, 69, 0, 0.8), 0 0 40px rgba(255, 69, 0, 0.5); /* Glowing effect */
+  background: linear-gradient(135deg, #efd334, #e9d53c); /* Brighter gradient */
+  box-shadow: 0 0 20px rgba(222, 229, 92, 0.8), 0 0 40px rgba(227, 249, 90, 0.5); /* Glowing effect */
   transform: scale(1.1); /* Slight scaling effect */
 }
 
@@ -535,30 +539,40 @@ body::-webkit-scrollbar-track {
     }
 
     .logo-container-mobile {
-        display: block;
-        position: absolute;
-        top: -30px;
-        left: 98px;
-        z-index: 110;
-        scale: 1.2;
+      display: flex;
+      justify-content: center; /* Center horizontally */
+      align-items: center;    /* Center vertically (if needed) */
+      width: 100%;            /* Take the full width of the screen */
+      position: absolute;     /* Ensure it stays at the top */
+      top: -40px;
+      left: -12px;
+      z-index: 1000;          /* Ensure it stays above other elements */
+      padding: 10px; 
+      scale: 1.2;
     }
 
     .logo-container3 {
-      position: absolute;
-      display: center;
+      display: flex;
+      justify-content: center; /* Center horizontally */
+      align-items: center;    /* Center vertically (if needed) */
+      width: 100%;            /* Take the full width of the screen */
+      position: absolute;     /* Ensure it stays at the top */
       top: 197px;
-      left: 90px;
-      z-index: 110;
+      left: -12px;
+      z-index: 1000;          /* Ensure it stays above other elements */
+      padding: 10px; 
       scale: 1.9;
     }
 
       /* Timer Style */
   #timer-container {
+    
     text-align: center;
     margin-top: 50px;
   }
 
   #timer {
+    margin: 13px;
     font-size: 2.5rem;
     font-weight: bold;
     color: #ffcc00;
@@ -952,3 +966,17 @@ body {
   }
 }
 
+.split-footer {
+  transition: transform 0.3s ease;
+}
+
+.split-footer.hidden {
+  transform: translateY(100%); /* Move the footer out of view */
+}
+
+@media (min-width: 768px) {
+  /* Keep the footer visible on tablets and larger screens */
+  .split-footer {
+      transform: translateY(0);
+  }
+}

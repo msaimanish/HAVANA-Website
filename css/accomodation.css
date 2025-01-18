@@ -13,6 +13,9 @@ body {
     margin-left: 180px;
 }
 
+
+
+
 .buttons-column {
     display: flex;
     flex-direction: column;
@@ -85,7 +88,7 @@ body {
     .container {
         flex-direction: column;
         align-items: center;
-        margin-top: 100px; /* Adjust for mobile */
+        margin-top: 135px; /* Adjust for mobile */
         margin-left: 10px;
     }
 
