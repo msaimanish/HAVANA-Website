@@ -188,6 +188,19 @@ body {
         display: none;
     }
 
+    .card {
+        width: 100%;
+        height: auto;
+        padding: 15px;
+        font-size: 1rem;
+    }
+
+    /* Mobile layout for Milestones */
+    .milestones {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
 }
 
 .story-header p {

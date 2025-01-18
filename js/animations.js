@@ -131,25 +131,27 @@ function showBox(id, button) {
 }
 
 
+// Track the last scroll position
 let lastScrollTop = 0;
+const footer = document.querySelector('.split-footer'); // Assuming '.split-footer' is your footer class
 
-window.addEventListener('scroll', () => {
-    const footer = document.querySelector('.split-footer');
-    const isMobile = window.innerWidth < 768; // Adjust breakpoint as needed
-    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+// Set a threshold to hide the footer (you can adjust this as needed)
+const threshold = 300; // Distance (in pixels) after which the footer starts disappearing
 
-    if (isMobile) {
-        if (currentScroll > lastScrollTop) {
-            // Scrolling down
-            footer.classList.add('hidden');
-        } else {
-            // Scrolling up
-            footer.classList.remove('hidden');
-        }
+window.addEventListener('scroll', function() {
+    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    // If we scroll down past the threshold, start vanishing the footer
+    if (currentScroll > threshold) {
+        let hideFooterAmount = Math.min(currentScroll - threshold, 60); // Cap the movement at 60px
+        footer.style.bottom = `-${hideFooterAmount}px`; // Move footer off screen gradually
+    } else {
+        footer.style.bottom = '0'; // Footer remains visible when below the threshold
     }
 
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For mobile or negative scroll
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Prevent negative scroll values
 });
+
 
 function toggleMenu() {
     const hamburgerMenu = document.getElementById('hamburger-menu');
