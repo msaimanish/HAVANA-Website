@@ -126,8 +126,7 @@ function createDynamicButtons(container, themeNumber) {
     const buttonNames = [
         { name: 'About', boxId: `theme${themeNumber}-box1` },
         { name: 'Timeline', boxId: `theme${themeNumber}-box2` },
-        { name: 'Rules', boxId: `theme${themeNumber}-box3` },
-        { name: 'Contact', boxId: `theme${themeNumber}-box4` }
+        { name: 'Contact', boxId: `theme${themeNumber}-box3` }
     ];
 
     // Add buttons for each section
@@ -141,11 +140,22 @@ function createDynamicButtons(container, themeNumber) {
 
     // Special Button (e.g., "Special Offer")
     const specialButton = document.createElement('button');
-    specialButton.textContent = 'Special Offer';
+    specialButton.textContent = 'Download Rulebook';
     specialButton.className = 'dynamic-button special';
-    specialButton.onclick = () => alert('Special Offer Button Clicked!');
+    specialButton.onclick = () => downloadPDF(`theme${themeNumber}.pdf`); // Unique PDF for each theme
     buttonsContainer.appendChild(specialButton);
 }
+
+// Function to handle PDF download
+function downloadPDF(pdfName) {
+    const link = document.createElement('a');
+    link.href = `RULEBOOKS/${pdfName}`; // Update with the actual path to the PDFs
+    link.download = pdfName;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+
 
 // Function to toggle visibility of content boxes within a specific theme
 function toggleBoxVisibility(themeNumber, boxId) {

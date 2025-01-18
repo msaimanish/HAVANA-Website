@@ -156,25 +156,4 @@ window.addEventListener('scroll', () => {
     lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For mobile or negative scroll
 });
 
-function setupFooterBehavior() {
-    const footer = document.querySelector('.split-footer');
-    const isMobile = window.innerWidth < 768;
 
-    if (isMobile) {
-        let lastScrollTop = 0;
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
-            if (currentScroll > lastScrollTop) {
-                footer.classList.add('hidden');
-            } else {
-                footer.classList.remove('hidden');
-            }
-
-            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-        });
-    }
-}
-
-window.addEventListener('resize', setupFooterBehavior);
-window.addEventListener('load', setupFooterBehavior);

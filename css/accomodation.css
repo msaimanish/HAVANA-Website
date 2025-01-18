@@ -41,6 +41,26 @@ body {
     color: #ffffff; /* Yellow text */
 }
 
+.buttons-column .special-button {
+    background-color: #2626f8; /* Distinct color for the FAQs button */
+    color: #ffffff; /* White text */
+    font-weight: bold;
+    border: none;
+    padding: 16px 27px;
+    border-radius: 100px;
+    cursor: none;
+    font-size: 14px;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.buttons-column .special-button:hover {
+    background-color: #000000; /* Darker orange on hover */
+    color: #ffffff; /* Keep white text */
+}
+
+
+
 .display-box {
     flex: 1;
     margin-left: 100px;
@@ -50,7 +70,7 @@ body {
     border-radius: 10px;
     font-size: 18px;
     display: none; /* Initially hidden */
-    height: 410px; /* Height for visual structure */
+    height: 425px; /* Height for visual structure */
     color: #ffffff; /* Text color */
     overflow-y: auto; /* Add vertical scrollbar */
     box-sizing: border-box; /* Ensure padding doesn't affect the width */
