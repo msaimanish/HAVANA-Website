@@ -627,7 +627,7 @@ body::-webkit-scrollbar-track {
       justify-content: center; /* Center horizontally */
       align-items: center;    /* Center vertically (if needed) */
       position: absolute;     /* Ensure it stays at the top */
-      top: -30px;
+      top: -40px;
       left: 26%;
       z-index: 1000;          /* Ensure it stays above other elements */ 
       scale: 1.2;
