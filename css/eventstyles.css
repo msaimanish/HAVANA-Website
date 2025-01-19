@@ -73,18 +73,17 @@ header .menu{
         to top, #000 40%, transparent
     );
 }
-.slider .list .item .content{
+.slider .list .item .content {
     position: absolute;
-    left: 10%;
-    top: 10%;
+    top: 34%; /* Center vertically */
+    left: 56%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Offset by 50% of its width and height */
     width: 500px;
     max-width: 80%;
     z-index: 1000;
     background: rgba(44, 44, 44, 0.5); /* Semi-transparent background */
-    /* You can change rgba to any color you want, e.g., 'background: #f0f0f0;' */ /* Make sure the items inside are positioned relative to this */
     padding: 20px; /* Optional padding to space out content */
 }
-
 
 
 .slider .item .content {

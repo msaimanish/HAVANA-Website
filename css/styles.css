@@ -10,13 +10,7 @@ body {
 
 
 
-* {
-  outline: 1px solid red; /* Shows all element boundaries */
-}
 
-* {
-  box-sizing: border-box;
-}
 
 
 
@@ -54,6 +48,8 @@ body {
   #custom-cursor {
     display: none;
   }
+
+
 
 }
 
@@ -630,12 +626,10 @@ body::-webkit-scrollbar-track {
       display: flex;
       justify-content: center; /* Center horizontally */
       align-items: center;    /* Center vertically (if needed) */
-      width: 100%;            /* Take the full width of the screen */
       position: absolute;     /* Ensure it stays at the top */
-      top: -40px;
-      left: -12px;
-      z-index: 1000;          /* Ensure it stays above other elements */
-      padding: 10px; 
+      top: -30px;
+      left: 26%;
+      z-index: 1000;          /* Ensure it stays above other elements */ 
       scale: 1.2;
     }
 
