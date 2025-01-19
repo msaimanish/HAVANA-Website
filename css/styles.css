@@ -533,12 +533,14 @@ body::-webkit-scrollbar-track {
 }
 
 /* Make hamburger menu visible on mobile devices (screen width <= 768px) */
-@media (max-width: 768px) {
+@media (max-width: 1168px) {
   .hamburger-menu {
     display: flex; /* Display hamburger menu on mobile */
   }
 
-
+  nav {
+    display: none; /* Hide the navigation bar by default */
+  } 
 
 
 }

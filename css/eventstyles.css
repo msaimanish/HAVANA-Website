@@ -73,10 +73,11 @@ header .menu{
         to top, #000 40%, transparent
     );
 }
+
 .slider .list .item .content {
     position: absolute;
-    top: 34%; /* Center vertically */
-    left: 56%; /* Center horizontally */
+    top: 28%; /* Center vertically */
+    left: 30%; /* Center horizontally */
     transform: translate(-50%, -50%); /* Offset by 50% of its width and height */
     width: 500px;
     max-width: 80%;
@@ -253,6 +254,18 @@ header .menu{
 
 
 @media screen and (max-width: 678px) {
+
+    .slider .list .item .content {
+        position: absolute;
+        top: 34%; /* Center vertically */
+        left: 54.5%; /* Center horizontally */
+        transform: translate(-50%, -50%); /* Offset by 50% of its width and height */
+        width: 500px;
+        max-width: 80%;
+        z-index: 1000;
+        background: rgba(44, 44, 44, 0.5); /* Semi-transparent background */
+        padding: 20px; /* Optional padding to space out content */
+    }
     .thumbnail{
         position: absolute;
         bottom: 10px;
