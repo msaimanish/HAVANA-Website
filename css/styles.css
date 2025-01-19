@@ -8,6 +8,18 @@ body {
   cursor: none;
 }
 
+
+
+* {
+  outline: 1px solid red; /* Shows all element boundaries */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+
 .background-video {
   position: fixed;
   top: 0;
@@ -17,9 +29,7 @@ body {
   z-index: -1; /* Lowest layer */
   object-fit: cover;
 }
-/* * {
-  outline: 1px solid red; /* Adds a red outline to all elements 
-} */
+
 /* Custom Cursor */
 #custom-cursor {
   width: 15px;
@@ -55,14 +65,18 @@ nav ul {
   margin: 0;
   padding: 10px 20px;
   display: flex;
-  gap: 20px;
+  gap: 15px;
   flex-wrap: wrap;
   position: fixed;
-  top: 35px; /* Position from the top */
-  left: 24%; /* Position from the left */
+  top: 30px; /* Position from the top */
+  left: 50%; /* Start from the middle */
+  transform: translateX(-50%); /* Adjust for the width of the element */
+  align-items: center; /* Align items vertically */
   z-index: 1000;
   cursor: none;
 }
+
+
 
 
 nav ul li {
@@ -99,6 +113,8 @@ nav ul li a:hover {
 /* Register Button in Navigation */
 nav ul li.register-btn-container {
   margin-left: 0px; /* Optional: Adds space between other links and register button */
+
+
 }
 
 nav ul li.register-btn-container a {
@@ -644,7 +660,7 @@ body::-webkit-scrollbar-track {
   }
 
   #timer {
-    margin: 13px;
+    margin: 5px;
     font-size: 2.5rem;
     font-weight: bold;
     color: #ffcc00;
@@ -759,8 +775,8 @@ body::-webkit-scrollbar-track {
 /* From Uiverse.io by Nawsome */ 
 .svg-frame {
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   transform-style: preserve-3d;
   display: flex;
   justify-content: center;
