@@ -103,3 +103,22 @@ document.onmousemove = (e) => {
 
 //Start the 3D rendering
 animate();
+
+
+// Remove scroll listener or ensure it doesn't affect the camera or object
+document.removeEventListener('wheel', null);
+
+// OR, if a scroll listener exists but must be kept for another purpose:
+document.addEventListener('wheel', (e) => {
+  // No changes to the camera or object on scroll
+});
+
+// This adds controls to the camera, so we can rotate/zoom it with the mouse
+controls = new OrbitControls(camera, renderer.domElement);
+
+// Disable zooming with scroll or trackpad gestures
+controls.enableZoom = false;
+
+// Optional: Adjust other controls settings if needed
+controls.enableRotate = true; // Allow rotation
+controls.enablePan = false; // Disable panning

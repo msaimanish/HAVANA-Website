@@ -133,28 +133,21 @@ function showBox(id, button) {
 let lastScrollTop = 0;
 const footer = document.querySelector('.split-footer'); // Assuming '.split-footer' is your footer class
 
-// Set a threshold to hide the footer (you can adjust this as needed)
-const threshold = 300; // Distance (in pixels) after which the footer starts disappearing
+window.addEventListener('scroll', function () {
+    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
-window.addEventListener('scroll', function() {
-    // Check if the screen width is below 768px (mobile)
-    if (window.innerWidth <= 768) {
-        let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
-        // If we scroll down past the threshold, start vanishing the footer
-        if (currentScroll > threshold) {
-            let hideFooterAmount = Math.min(currentScroll - threshold, 60); // Cap the movement at 60px
-            footer.style.bottom = `-${hideFooterAmount}px`; // Move footer off screen gradually
-        } else {
-            footer.style.bottom = '0'; // Footer remains visible when below the threshold
-        }
+    // Check if scrolling down or up
+    if (currentScroll > lastScrollTop) {
+        // Scrolling down
+        footer.style.transform = 'translateY(100%)'; // Hide footer
     } else {
-        // Ensure footer is always visible on larger screens
-        footer.style.bottom = '0';
+        // Scrolling up
+        footer.style.transform = 'translateY(0)'; // Show footer
     }
 
     lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Prevent negative scroll values
 });
+
 
 function toggleMenu() {
     const hamburgerMenu = document.getElementById('hamburger-menu');
@@ -163,3 +156,15 @@ function toggleMenu() {
     hamburgerMenu.classList.toggle('active'); // Toggle hamburger icon animation
     dropdownMenu.classList.toggle('open'); // Toggle dropdown menu visibility and animation
 }
+
+// Detect scroll position
+window.addEventListener('scroll', function() {
+    const blackBox = document.querySelector('.black-box');
+
+    // Check the scroll position and show the black box
+    if (window.scrollY > 100) {  // Change 100 to any value you want
+        blackBox.classList.add('visible');
+    } else {
+        blackBox.classList.remove('visible');
+    }
+});

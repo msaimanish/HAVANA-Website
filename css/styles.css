@@ -10,6 +10,29 @@ body {
 
 
 
+/* Initial styles for the black box */
+.black-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;  /* You can adjust the height of the box */
+  background-color: black;
+  z-index: 1000;  /* Ensures the box stays on top */
+  display: none;  /* Initially hidden */
+  transition: all 0.3s ease;  /* Smooth transition */
+}
+
+/* Optional: Add some styles when the box is visible */
+.black-box.visible {
+  display: block;  /* Show the black box when scrolled */
+}
+
+@media (max-width: 768px) {
+  .black-box {
+      display: none; 
+  }
+}
 
 
 
@@ -286,12 +309,18 @@ body::-webkit-scrollbar-track {
 }
 
 #container3D canvas {
-  width: 100vw !important;
-  height: 100vh !important;
-  position: fixed;
-  top: 10;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: -100px;
   left: 0;
+  transition: transform 0.5s ease-in-out; /* Smooth transition */
+  transform-style: preserve-3d; /* Ensure children are displayed in 3D space */
+  transform-origin: center; /* Set transformation origin at the center */
 }
+
+
+
 
 @media only screen and (max-width: 768px) {
   #container3D {
@@ -594,15 +623,15 @@ body::-webkit-scrollbar-track {
   position: fixed;
   top: 0px;
   left: 81px;
-  z-index: 11; /* To ensure it stays on top of other elements */
+  z-index: 110; /* To ensure it stays on top of other elements */
 }
 
 .logo-container2 {
   position: fixed;
   top: -30px;
   right: 90px;
-  z-index: 1000; /* To ensure it stays on top of other elements */
-  scale: 0.6;
+  z-index: 100; /* To ensure it stays on top of other elements */
+  scale: 0.5;
 }
 
 .logo-container3 {
