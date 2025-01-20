@@ -367,7 +367,6 @@
     /* Title section */
     .title-image-text-section {
         margin-top: 250px; /* Reduced space */
-        padding: 10px;
     }
 
     .full-width-title {
@@ -404,6 +403,7 @@
     .yellow-card-title {
         font-size: 2rem;
         margin-right: 0;
+        padding-right: 0px;
     }
 
     .right-tiles {
@@ -436,6 +436,7 @@
 
     .sponsor-logos {
         grid-template-columns: repeat(2, 1fr); /* Two logos per row */
+        scale: 0.9;
     }
 
     .footer {
