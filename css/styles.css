@@ -8,9 +8,6 @@ body {
   cursor: none;
 }
 
-* {
-  border: 1px solid red ;
-}
 
 /* Initial styles for the black box */
 .black-box {
