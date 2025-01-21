@@ -1,5 +1,5 @@
 // Set your event date (e.g., July 1, 2025)
-const eventDate = new Date("2025-2-03 15:20:00");
+const eventDate = new Date("2025-01-21T10:00:00Z");;
 
 
 
