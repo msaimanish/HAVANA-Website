@@ -680,7 +680,7 @@ body::-webkit-scrollbar-track {
   #timer-container {
     
     text-align: center;
-    margin-top: 50px;
+
   }
 
   #timer {
@@ -688,6 +688,7 @@ body::-webkit-scrollbar-track {
     font-size: 2.5rem;
     font-weight: bold;
     color: #ffcc00;
+    max-width: 250px;
   }
 
   #timer span {
