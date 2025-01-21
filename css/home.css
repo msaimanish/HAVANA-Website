@@ -12,7 +12,9 @@
     transform: translateY(50px); /* Initially below */
     transition: opacity 1s ease, transform 1s ease; /* Smooth transition */
 }
-
+body {
+    padding-top: 25px; /* Add space at the top of the body */
+  }
 
 
 /* Add the class that makes it visible when in view */

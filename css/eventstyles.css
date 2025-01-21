@@ -5,6 +5,7 @@ body{
     background-color: #010101;
     color: #eee;
     overflow-x: hidden;
+    padding-top: none;
 }
 
 svg{

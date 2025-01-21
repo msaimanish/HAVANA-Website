@@ -1,0 +1,128 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+h2 {
+    text-align: center;
+    /* margin-top: 80px 0px 0px;  */
+    color: #ffd700;
+    text-shadow: 0 0 10px #ffd700, 0 0 20px #ffcc00, 0 0 30px #ffcc00;
+}
+
+.section-heading {
+    
+   /* margin-top: 140px;  Adjust the margin as needed */
+   margin: 120px 0px 10px;
+  
+}
+
+
+.team-container {
+    padding: 20px;
+}
+
+/* Card Container */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+/* Card Styling */
+.card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    /*box-shadow: 0 4px 8px rgba(255, 255, 255, 0.6); /* Default white glow */
+    overflow: hidden;
+    width: 240px; /* Reduced width 250 220*/
+    height: 390px; /* Increased height 400 420 */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+    border: 2px solid transparent;
+
+    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.8); /* Increased white glow effect */
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+/*blue hover*/
+/* .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 30px rgba(0, 123, 255, 0.8), 0 0 50px rgba(0, 123, 255, 0.6); 
+    border: 2px solid #007BFF;
+} */
+
+/*gold hover*/
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.8), 0 0 50px rgba(255, 223, 0, 0.6); 
+    border: 2px solid #FFD700; 
+}
+
+/* Card Image */
+.card-image-container {
+    width: 100%;
+    height: 200px; /* Adjusted height for better fit */
+    overflow: hidden;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.card-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+/* Card Content */
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 10px 0 5px;
+    color: #333;
+}
+
+.card-des {
+    font-size: 1rem;
+    margin: 5px 0;
+    color: #555;
+}
+
+.card-email {
+    font-size: 0.9rem;
+    color: #0056b3;
+    text-decoration: underline;
+    margin-top: 0px; /* Adjusted margin */
+    display: inline-block;
+    transition: color 0.3s ease;
+    line-height: 1; /* Reduce line height to minimize space */
+}
+
+.card-email:hover {
+    color: #ff4500;
+}
+
+
+/* Reveal Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}

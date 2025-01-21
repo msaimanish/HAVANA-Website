@@ -8,10 +8,12 @@ body {
   cursor: none;
 }
 
-/* Add padding or margin to the body */
-body {
-  padding-top: 25px; /* Add space at the top of the body */
+#map {
+  height: 100%;
 }
+
+/* Add padding or margin to the body */
+
 
 /* Initial styles for the black box */
 .black-box {
