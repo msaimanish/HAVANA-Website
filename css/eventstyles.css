@@ -238,15 +238,19 @@ header .menu{
 }
 /* Style for the slider names */
 .thumbnail .item .content {
-    font-size: 1.15rem; /* Increase font size */
+    font-size: 1rem; /* Adjust font size if needed */
     color: white; /* Change text color */
-    padding: 10px 10px; /* Add some padding */
-    background: rgba(0, 0, 0, 0.5); /* Add a semi-transparent black background */
-    border-radius: 5px; /* Add rounded corners */
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    border-radius: 5px;
     position: absolute;
-    bottom: 160px;
-    transition: all 0.3s ease; /* Smooth transition for hover effect */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add a subtle shadow to make it stand out more */
+    bottom: 150px;  /* Adjust the distance from the bottom */
+    left: 50%; /* Horizontally center */
+    transform: translateX(-50%); /* Fix centering */
+    padding: 10px;
+    width: 50%; /* Allow content to expand naturally */
+    max-width: 100%; /* Limit width */
+    transition: all 0.3s ease;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 
