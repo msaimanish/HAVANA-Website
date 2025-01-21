@@ -13,6 +13,8 @@
     transition: opacity 1s ease, transform 1s ease; /* Smooth transition */
 }
 
+
+
 /* Add the class that makes it visible when in view */
 .title-image-text-section.visible {
     opacity: 1;
@@ -29,6 +31,8 @@
     letter-spacing: 2px;
     width: 90%;
 }
+
+
 
 /* Content wrapper to group image and text */
 .content-wrapper {
@@ -226,8 +230,58 @@
     font-size: 4rem;
     font-weight: bold;
     color: rgb(255, 238, 238);
+    text-transform: uppercase;
     margin-bottom: 50px; /* Space between title and gallery */
+    letter-spacing: 3px;
+    text-align: center;
+    position: relative;
+    animation: fadeIn 1.5s ease-in-out;
 }
+
+/* Decorative Line Below Title */
+.gallery-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(90deg, #ff7f50, #ffca3a);
+    border-radius: 2px;
+    animation: slideIn 1s ease-in-out forwards;
+}
+
+/* Glow Effect */
+.gallery-title:hover {
+    text-shadow: 0 0 10px rgba(255, 238, 238, 0.8), 
+                 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide-In Animation for Decorative Line */
+@keyframes slideIn {
+    from {
+        width: 0;
+    }
+    to {
+        width: 120px;
+    }
+}
+
+
+
 
 /* Gallery Container */
 .gallery-container {
@@ -271,11 +325,11 @@
 /* Gallery Layout (Three rows, horizontal scroll) */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(8, 1fr); /* 5 images per row */
+    grid-template-columns: repeat(20, 1fr); /* 5 images per row */
     grid-template-rows: repeat(2, auto); /* 2 rows for the images */
-    gap: 100px 70px; /* No gap between rows */
-    width: 100%;
-    animation: scrollAnimation 30s linear infinite;
+    gap: 110px 100px; /* No gap between rows */
+    width: 400%;
+    animation: scrollAnimation 200s linear infinite;
 }
 /* Each Gallery Item */
 .gallery-item {
@@ -298,7 +352,7 @@
 /* Horizontal scrolling animation */
 @keyframes scrollAnimation {
     0% {
-        transform: translateX(20%);
+        transform: translateX(5%);
     }
     99% {
         transform: translateX(-100%); /* End position, just before reset */
@@ -312,37 +366,88 @@
 .sponsor-section {
     width: 100%;
     text-align: center;
-    margin-top: 150px;
+    margin-top: 250px;
 }
 
 /* Title Styling */
 .sponsor-title {
-    font-size: 4rem;
-
+    font-size: 3.5rem;
     font-weight: bold;
-    color: rgb(255, 255, 255);
-    margin-bottom: 30px;
+    color: #ffffff;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+/* Title Underline Animation */
+.sponsor-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #ffca3a;
+    animation: slideIn 1s ease-in-out forwards;
 }
 
 /* Sponsor Logo Grid */
 .sponsor-logos {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 logos per row */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
     gap: 30px;
-    justify-items: center;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Individual Sponsor Logo Styling */
 .sponsor-logo img {
-    max-width: 150px; /* Ensure logos are responsive */
+    max-width: 150px;
     height: auto;
-    transition: transform 0.3s ease;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Hover Effect on Sponsor Logos */
 .sponsor-logo img:hover {
-    transform: scale(1.1); /* Slight zoom effect on hover */
+    transform: scale(1.15) rotate(3deg); /* Slight zoom and tilt */
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.5);
 }
+
+/* Keyframes for Title Underline Animation */
+@keyframes slideIn {
+    from {
+        width: 0;
+    }
+    to {
+        width: 80px;
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .sponsor-title {
+        font-size: 2.5rem;
+    }
+
+    .sponsor-logos {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sponsor-title {
+        font-size: 2rem;
+    }
+
+    .sponsor-logo img {
+        max-width: 120px;
+    }
+}
+
 
 /* Footer Styling */
 .footer {
@@ -394,6 +499,10 @@
         font-size: 1rem;
     }
 
+    .gallery-section {
+        display: none;
+    }
+
     .yellow-card {
         flex-direction: column;
         height: auto; /* Allow yellow card to be flexible */
@@ -430,9 +539,7 @@
         margin: 10px 0;
     }
 
-    .gallery-section {
-        display: none;
-    }
+
 
     .sponsor-logos {
         grid-template-columns: repeat(2, 1fr); /* Two logos per row */
@@ -579,40 +686,88 @@
   }
 
 
-  #join-us-section {
-    background-color: #0066cc; /* Blue background */
-    color: white; /* White text */
-    padding: 30px 0; /* Padding around the content */
-    text-align: center;
-    margin-top: 250px; /* Centering the container */
+/* Join Us Section Styling */
+#join-us-section {
+    background: linear-gradient(135deg, #0066cc, #003d99); /* Gradient blue background */
+    color: white;
+    padding: 50px 20px; /* Increase padding for better spacing */
+    text-align: left;
+    margin: 20px;
+    border-radius: 10px; /* Smooth corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    animation: fadeIn 1.5s ease-in-out;
 }
 
+/* Container Styling */
 #join-us-section .container {
     max-width: 1200px;
-    
+    margin: 0 auto;
+    position: relative;
 }
 
+/* Gallery Section Animation */
+.gallery-title,
+.gallery-content {
+    opacity: 0; /* Initially hidden */
+    transform: translateY(50px); /* Start slightly below */
+    transition: all 0.8s ease-in-out; /* Smooth transition */
+}
+
+/* Visible State for Scroll Animation */
+.gallery-visible .gallery-title,
+.gallery-visible .gallery-content {
+    opacity: 1;
+    transform: translateY(0); /* Move to original position */
+}
+
+/* Title Styling */
 #join-us-section h2 {
     font-size: 2rem;
-    margin: 20px; /* Spacing below the title */
     font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
+    line-height: 1.8;
+    margin-bottom: 30px; /* Space below the title */
+    animation: slideUp 1.5s ease-in-out forwards;
 }
 
+/* Button Styling */
 .join-button {
-    background-color: #ffcc00; /* Button color */
-    color: #333; /* Text color on button */
-    padding: 15px 30px;
+    background-color: #ffcc00;
+    color: #333;
+    padding: 15px 40px;
     text-decoration: none;
-    font-size: 1rem;
-    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 25px; /* More rounded button */
     display: inline-block;
-    margin-top: 20px; /* Add margin above button to space it from the text */
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
+    animation: fadeIn 2s ease-in-out forwards;
 }
 
+/* Hover Effects for Button */
 .join-button:hover {
     background-color: #e6b800; /* Darker yellow on hover */
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 
@@ -624,17 +779,18 @@
     }
 
     #join-us-section h2 {
-        font-size: 1.2rem; /* Smaller font size for better readability */
-        margin-bottom: 15px; /* Reduce spacing below the title */
-        margin-top: -30px;
+        font-size: 1rem; /* Smaller font size for better readability */
+        margin-top: 10px;
     }
 
     .join-button {
-        font-size: 0.9rem; /* Smaller button text */
+        font-size: 1rem; /* Smaller button text */
         padding: 12px 25px; /* Smaller button padding */
-        margin-right: 50px; /* Adjust the margin between text and button */
+        margin-right: 5px; /* Adjust the margin between text and button */
     }
 }
+
+
 
 /* Very small screens like phones in portrait mode */
 @media (max-width: 480px) {

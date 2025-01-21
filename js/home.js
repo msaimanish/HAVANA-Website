@@ -32,3 +32,22 @@ window.addEventListener('scroll', () => {
         });
     }
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const gallerySection = document.querySelector(".gallery-section");
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    gallerySection.classList.add("gallery-visible");
+                }
+            });
+        },
+        { threshold: 0.2 } // Trigger when 20% of the section is visible
+    );
+
+    observer.observe(gallerySection);
+});
+
