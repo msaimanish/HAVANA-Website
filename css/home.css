@@ -577,3 +577,74 @@
       height: 3px; /* Thinner lines for smaller squares */
     }
   }
+
+
+  #join-us-section {
+    background-color: #0066cc; /* Blue background */
+    color: white; /* White text */
+    padding: 30px 0; /* Padding around the content */
+    text-align: center;
+    margin-top: 250px; /* Centering the container */
+}
+
+#join-us-section .container {
+    max-width: 1200px;
+    
+}
+
+#join-us-section h2 {
+    font-size: 2rem;
+    margin: 20px; /* Spacing below the title */
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+}
+
+.join-button {
+    background-color: #ffcc00; /* Button color */
+    color: #333; /* Text color on button */
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 20px; /* Add margin above button to space it from the text */
+    transition: background-color 0.3s;
+}
+
+.join-button:hover {
+    background-color: #e6b800; /* Darker yellow on hover */
+}
+
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+    #join-us-section {
+        padding: 30px 10px; /* Reduce padding on mobile */
+        
+    }
+
+    #join-us-section h2 {
+        font-size: 1.2rem; /* Smaller font size for better readability */
+        margin-bottom: 15px; /* Reduce spacing below the title */
+        margin-top: -30px;
+    }
+
+    .join-button {
+        font-size: 0.9rem; /* Smaller button text */
+        padding: 12px 25px; /* Smaller button padding */
+        margin-right: 50px; /* Adjust the margin between text and button */
+    }
+}
+
+/* Very small screens like phones in portrait mode */
+@media (max-width: 480px) {
+    #join-us-section h2 {
+        font-size: 1rem; /* Further reduce font size */
+        margin-bottom: 10px; /* Tighten space below title */
+    }
+
+    .join-button {
+        font-size: 0.85rem; /* Even smaller button text */
+        padding: 10px 20px; /* Further reduce padding for the button */
+    }
+}
