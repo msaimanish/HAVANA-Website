@@ -242,8 +242,8 @@ header .menu{
     color: white; /* Change text color */
     background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
     border-radius: 5px;
-    position: absolute;
-    bottom: 150px;  /* Adjust the distance from the bottom */
+    position: relative;
+    bottom: 230px;  /* Adjust the distance from the bottom */
     left: 50%; /* Horizontally center */
     transform: translateX(-50%); /* Fix centering */
     padding: 10px;
@@ -298,15 +298,19 @@ header .menu{
         display: none;
     }
     .thumbnail .item .content {
-        font-size: 1rem; /* Increase font size */
+        font-size: 1rem; /* Adjust font size if needed */
         color: white; /* Change text color */
-        background: rgba(0, 0, 0, 0.5); /* Add a semi-transparent black background */
-        border-radius: 5px; /* Add rounded corners */
-        position: absolute;
-        transform: scale(0.8);
-        bottom: 180px;
-        transition: all 0.3s ease; /* Smooth transition for hover effect */
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add a subtle shadow to make it stand out more */
+        background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+        border-radius: 5px;
+        position: relative;
+        bottom: 230px;  /* Adjust the distance from the bottom */
+        left: 63%; /* Horizontally center */
+        transform: translateX(-50%); /* Fix centering */
+        padding: 10px;
+        width: 50%; /* Allow content to expand naturally */
+        max-width: 100%; /* Limit width */
+        transition: all 0.3s ease;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     }
     
     
