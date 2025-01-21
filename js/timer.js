@@ -1,5 +1,5 @@
 // Set your event date (e.g., January 21, 2025, 10:32 AM local time)
-const targetUTCDate = new Date("2025-01-21T10:52:00Z");
+const targetUTCDate = new Date("2025-01-25T1:52:00Z");
 const offsetMinutes = (5 * 60) + 29; // Local time offset in minutes
 const eventDate = new Date(targetUTCDate.getTime() - offsetMinutes * 60 * 1000);
 
