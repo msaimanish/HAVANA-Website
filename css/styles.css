@@ -44,6 +44,7 @@ body {
   height: 100%;
   z-index: -1; /* Lowest layer */
   object-fit: cover;
+  pointer-events: none; /* Prevents interaction with the video */
 }
 
 /* Custom Cursor */
