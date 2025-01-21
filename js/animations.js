@@ -168,3 +168,12 @@ window.addEventListener('scroll', function() {
         blackBox.classList.remove('visible');
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const video = document.querySelector('.background-video');
+    if (video) {
+        video.play().catch(error => {
+            console.error('Video autoplay failed:', error);
+        });
+    }
+});
