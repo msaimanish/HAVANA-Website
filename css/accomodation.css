@@ -197,7 +197,7 @@ a:hover {
     .container {
         flex-direction: column;
         align-items: center;
-        margin-top: 105px; /* Adjust for mobile */
+        margin-top: 125px; /* Adjust for mobile */
         margin-left: 0px;
     }
 

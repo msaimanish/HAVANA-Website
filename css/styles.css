@@ -363,16 +363,30 @@ body::-webkit-scrollbar-track {
   margin: 5px;
 }
 
+#timer.event-started {
+  margin-top: 700px; /* Adjust this to the desired position */
+  font-size: 2rem;
+  color: #ff8800; /* Optional: Change the color if needed */
+  text-align: center;
+}
+
+.event-started #timer {
+  margin-top: 250px; /* Adjust this to move the text down */
+  color: #ff8800; /* Optional: Change color for visibility */
+}
+
+
 
 #event-start-text {
   font-size: 1.5rem;
   color: #ffcc00;
   margin-bottom: 10px;
-  margin-top: 250px;
+  margin-top: 250px; /* Increased from 250px to 350px */
   text-align: center;
   font-family: 'Roboto', sans-serif;
   animation: fadeIn 1.5s ease-in-out; /* Optional fade-in effect */
 }
+
 
 
 /* Hamburger Menu */
@@ -635,7 +649,7 @@ body::-webkit-scrollbar-track {
 
 .logo-container3 {
   position: absolute;
-  top: 277px;
+  top: 257px;
   left: 170px;
   z-index: 110;
   scale: 2.9;
@@ -669,7 +683,7 @@ body::-webkit-scrollbar-track {
       align-items: center;    /* Center vertically (if needed) */
       width: 100%;            /* Take the full width of the screen */
       position: absolute;     /* Ensure it stays at the top */
-      top: 197px;
+      top: 157px;
       left: -12px;
       z-index: 1000;          /* Ensure it stays above other elements */
       padding: 10px; 
@@ -680,11 +694,12 @@ body::-webkit-scrollbar-track {
   #timer-container {
     
     text-align: center;
-
+    margin: 5px;
   }
 
   #timer {
     margin: 5px;
+    margin-left: 15px;
     font-size: 2.5rem;
     font-weight: bold;
     color: #ffcc00;
