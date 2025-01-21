@@ -8,6 +8,10 @@ body {
   cursor: none;
 }
 
+/* Add padding or margin to the body */
+body {
+  padding-top: 25px; /* Add space at the top of the body */
+}
 
 /* Initial styles for the black box */
 .black-box {
@@ -364,17 +368,7 @@ body::-webkit-scrollbar-track {
   margin: 5px;
 }
 
-#timer.event-started {
-  margin-top: 700px; /* Adjust this to the desired position */
-  font-size: 2rem;
-  color: #ff8800; /* Optional: Change the color if needed */
-  text-align: center;
-}
 
-.event-started #timer {
-  margin-top: 250px; /* Adjust this to move the text down */
-  color: #ff8800; /* Optional: Change color for visibility */
-}
 
 
 
@@ -382,7 +376,7 @@ body::-webkit-scrollbar-track {
   font-size: 1.5rem;
   color: #ffcc00;
   margin-bottom: 10px;
-  margin-top: 250px; /* Increased from 250px to 350px */
+  margin-top: 200px; /* Increased from 250px to 350px */
   text-align: center;
   font-family: 'Roboto', sans-serif;
   animation: fadeIn 1.5s ease-in-out; /* Optional fade-in effect */
@@ -648,13 +642,49 @@ body::-webkit-scrollbar-track {
   scale: 0.5;
 }
 
+/* Logo Container Styling */
 .logo-container3 {
   position: absolute;
   top: 257px;
   left: 170px;
   z-index: 110;
   scale: 2.9;
+  opacity: 0; /* Initially hidden */
+  animation: logoAnimation 1.5s ease-out forwards;
 }
+
+/* Keyframes for the logo animation */
+@keyframes logoAnimation {
+  0% {
+    transform: scale(0.5); /* Start smaller */
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.05); /* Slightly larger during the middle */
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1); /* Final size */
+    opacity: 1; /* Fully visible */
+  }
+}
+
+/* Hover effect for interactive feel */
+.logo-container3:hover .logo {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+  transition: transform 0.3s ease-out; /* Make the hover smooth */
+}
+
+/* Logo Styling */
+.logo {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.3s ease-out; /* Ensure smooth scaling on hover */
+}
+
+
+
 
 .logo-container-mobile {
   display: none;
@@ -1098,17 +1128,17 @@ body {
   }
 }
 
-.split-footer {
-  transition: transform 0.3s ease;
-}
 
-.split-footer.hidden {
-  transform: translateY(100%); /* Move the footer out of view */
-}
 
-@media (min-width: 768px) {
-  /* Keep the footer visible on tablets and larger screens */
-  .split-footer {
+/* For Mobile - Vanishing Footer on Scroll */
+@media (max-width: 768px) {
+  /* Initially, the footer is visible */
+  footer {
       transform: translateY(0);
+  }
+
+  /* When scrolling down, the footer vanishes */
+  .footer-hidden {
+      transform: translateY(100%);
   }
 }

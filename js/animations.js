@@ -130,23 +130,24 @@ function showBox(id, button) {
     button.classList.add('active-button');
 }
 
+// Check scroll direction and toggle the footer visibility for mobile
 let lastScrollTop = 0;
-const footer = document.querySelector('.split-footer'); // Assuming '.split-footer' is your footer class
+const footer = document.querySelector('footer');
 
-window.addEventListener('scroll', function () {
+window.addEventListener('scroll', function() {
     let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
-    // Check if scrolling down or up
     if (currentScroll > lastScrollTop) {
-        // Scrolling down
-        footer.style.transform = 'translateY(100%)'; // Hide footer
+        // Scrolling down: hide the footer
+        footer.classList.add('footer-hidden');
     } else {
-        // Scrolling up
-        footer.style.transform = 'translateY(0)'; // Show footer
+        // Scrolling up: show the footer
+        footer.classList.remove('footer-hidden');
     }
 
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Prevent negative scroll values
-});
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+}, false);
+
 
 
 function toggleMenu() {

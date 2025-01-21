@@ -1,12 +1,11 @@
-// Set your event date (e.g., January 21, 2025, 10:32 AM local time)
-// Set the event date in UTC
-const targetUTCDate = new Date("2025-01-25T01:37:00Z");
+// Set your event date in UTC (example: January 21, 2025, 12:24 PM UTC)
+const targetUTCDate = new Date("2025-02-27T19:44:00Z"); // Event in UTC
 
-// IST is UTC+5:30, which is 330 minutes
-const offsetMinutes = (5 * 60) + 30;
+// IST is UTC+5:30, so we subtract 5 hours 30 minutes (330 minutes) from the event date
+const offsetMinutes = (5 * 60) + 30; // 330 minutes offset for IST
 
-// Convert the UTC date to IST
-const eventDate = new Date(targetUTCDate.getTime() + offsetMinutes * 60 * 1000);
+// Subtract 330 minutes to adjust for IST
+const eventDate = new Date(targetUTCDate.getTime() - offsetMinutes * 60 * 1000); // Event date in IST
 
 // Smooth count-up animation function
 function animateCount(element, targetValue, duration) {
@@ -33,8 +32,8 @@ function initializeCountdown(days, hours, minutes, seconds) {
 
 // Update the countdown
 function updateCountdown() {
-    const now = new Date();
-    const timeRemaining = eventDate - now;
+    const now = new Date(); // Get current local time
+    const timeRemaining = eventDate - now; // Calculate the difference between event time (IST) and current local time
 
     if (timeRemaining <= 0) {
         clearInterval(countdown);
@@ -60,14 +59,15 @@ function updateCountdown() {
 
 // Initialize and start the countdown
 function startCountdown() {
-    const now = new Date();
-    if (eventDate < now) {
+    const now = new Date(); // Get current local time
+    const timeRemaining = eventDate - now; // Calculate time remaining
+
+    if (timeRemaining <= 0) {
         document.getElementById("timer").innerText = "Event has started!";
         document.getElementById("event-start-text").innerText = "";
         return;
     }
 
-    const timeRemaining = eventDate - now;
     if (timeRemaining > 0) {
         const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
         const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));

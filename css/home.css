@@ -739,6 +739,7 @@
     font-weight: bold;
     border-radius: 25px; /* More rounded button */
     display: inline-block;
+    cursor: none;
     transition: background-color 0.3s, transform 0.3s;
     animation: fadeIn 2s ease-in-out forwards;
 }
