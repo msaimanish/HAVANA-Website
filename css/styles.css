@@ -69,12 +69,6 @@ body {
 }
 
 @media (max-width: 768px) {
-  #hero {
-    display: none;
-    flex-direction: none;
-    align-items: none;
-    justify-content: none;
-  }
   .black-box {
       display: none; 
   }
