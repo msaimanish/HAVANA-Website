@@ -84,6 +84,7 @@ body {
 
 
 
+
 /* Navigation */
 nav ul {
   list-style: none;
@@ -132,6 +133,24 @@ nav ul li a:hover {
   animation: bubble 0.6s ease-in-out;
 }
 
+
+/* Highlight the active page */
+nav ul li a.active {
+  color: #ffcc00;
+  text-shadow: 0 0 8px rgba(255, 204, 0, 0.7), 0 0 20px rgba(255, 204, 0, 0.5);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
+}
+
+/* Remove default visited and active link styles */
+nav ul li a:link {
+  color: #ffffff; /* Default color for all links */
+  text-shadow: none;
+  box-shadow: 5px 5px 10px rgba(162, 14, 14, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.3);
+  background-color: #000000; /* Keep your existing background */
+}
+
+/* Active state is already handled with .active */
 
 
 

@@ -186,3 +186,19 @@ function myMap() {
     };
     var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 }
+
+
+// Get all nav links
+const navLinks = document.querySelectorAll("nav ul li a");
+
+// Get the current URL path
+const currentPath = window.location.pathname;
+
+// Loop through the nav links and add the "active" class to the matching link
+navLinks.forEach(link => {
+  if (link.href.includes(currentPath)) {
+    link.classList.add("active");
+  } else {
+    link.classList.remove("active");
+  }
+});
