@@ -56,9 +56,19 @@ body {
     max-width: 50%; /* Limit the width of the text */
     font-size: 1.2rem;
     color: rgb(255, 255, 255);
-    text-align: left;
     padding-left: 20px;
+    display: block;
 }
+
+.right-text {
+    max-width: 50%; /* Limit width */
+    font-size: 1.2rem;
+    color: rgb(255, 255, 255);
+    text-align: justify; /* Justifies text for equal-length lines */
+    display: block;
+    word-break: break-word; /* Ensure words wrap properly */
+}
+
 
 /* Button styling */
 .cta-button {
@@ -201,6 +211,7 @@ body {
     font-size: 1.2rem;
     color: rgb(0, 0, 0);
     margin: 10px;
+    
 }
 
 .white-card h3 {
@@ -828,3 +839,29 @@ body {
         height: auto;
     }
 }
+
+
+.footer-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.footer-btn {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    padding: 5px 10px;
+    border: none;
+    background: none;
+}
+
+/* Make buttons vertical on mobile */
+@media (max-width: 768px) {
+    .footer-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
