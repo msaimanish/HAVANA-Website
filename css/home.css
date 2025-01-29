@@ -841,14 +841,23 @@ body {
 }
 
 
+.footer {
+    cursor: none;
+    text-align: center;
+    background: #222;
+    color: white;
+}
+
 .footer-buttons {
     display: flex;
     justify-content: center;
     gap: 10px;
     flex-wrap: wrap;
+    cursor: none;
 }
 
 .footer-btn {
+    cursor: none;
     text-decoration: none;
     color: white;
     font-size: 14px;
@@ -863,5 +872,46 @@ body {
         flex-direction: column;
         align-items: center;
     }
+    .footer {
+        cursor: none;
+        text-align: center;
+        background: #222;
+        color: white;
+    }
 }
 
+/* Contact Button */
+.contact-btn {
+    display: block;
+    cursor: none;
+    text-align: center;
+    margin: 15px auto;
+    padding: 8px 12px;
+    background: rgb(255, 255, 255);
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    width: fit-content;
+}
+
+
+/* Email Section */
+.footer-email {
+    cursor: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    font-size: 14px;
+    gap: 5px;
+}
+
+.footer-email i {
+    font-size: 16px;
+}
+
+.university-name {
+    margin-bottom: 10px;
+    font-weight: bold;
+}

@@ -230,4 +230,35 @@ a:hover {
 }
 
 
+.glass-box {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    margin-left: 33%;
+}
+
+@media screen and (max-width: 768px) {
+    .glass-box {
+        margin-left: 12%;
+    }
+    
+}
+
+.glass-box {
+    width: 80%; /* Adjust the width */
+    max-width: 400px; /* Limit max size */
+    border-radius: 15px;
+    text-align: center;
+}
   
+.email-icon {
+    font-size: 1.2rem;
+    color: yellow;
+    margin-right: 10px;
+}
+
+.email-text {
+    font-size: 1.2rem;
+    color: white;
+    font-weight: bold;
+}
