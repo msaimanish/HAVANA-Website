@@ -12,6 +12,8 @@
     <script src="js/about.js" defer></script> 
     <link rel="stylesheet" href="css/contact_us.css">
     <script src="js/contact_us.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
 </head>
 
 <body>
@@ -108,22 +110,31 @@
     <main class="contact-us-container">
         <h1>Contact Us</h1>
         <p class="description">We'd love to hear from you! Whether you have a question about the event, want to give feedback, or just want to say hi, feel free to reach out to us through the form below.</p>
-
+    
         <div class="form-container">
             <form action="https://formsubmit.co/msaimanishreddy123@gmail.com" method="POST">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" placeholder="Your Name" required>
-
+    
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" placeholder="Your Email" required>
-
+    
                 <label for="message">Message:</label>
                 <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
-
+    
                 <button type="submit" class="submit-btn">Send Message</button>
             </form>
         </div>
+    
+        <!-- New Glassmorphism Section -->
+        <section class="glass-contact">
+            <div class="glass-box">
+                <i class="fas fa-envelope email-icon"></i>
+                <p class="email-text">gelectra@domain.com</p>
+            </div>
+        </section>
     </main>
+    
 
     
 

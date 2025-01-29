@@ -16,9 +16,27 @@ h2 {
 
 .section-heading {
     
-   /* margin-top: 140px;  Adjust the margin as needed */
-   margin: 120px 0px 10px;
+   margin-top: 10px; 
   
+}
+.our-team-section {
+    text-align: center;
+    margin-top: 80px;
+}
+
+.our-team-heading {
+    font-size: 4rem;
+    font-weight: bold;
+    color: yellow; /* Yellow text */
+    text-transform: uppercase;
+    display: inline-block;
+    border-radius: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+    .our-team-heading {
+        font-size: 3rem;
+    }
 }
 
 

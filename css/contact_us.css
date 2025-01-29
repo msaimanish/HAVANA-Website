@@ -130,3 +130,44 @@ form .submit-btn:hover {
 
 
 
+.glass-contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.glass-box {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 20px 40px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-box {
+    width: 80%; /* Adjust the width */
+    max-width: 400px; /* Limit max size */
+    padding: 15px; /* Reduce padding */
+    background: rgba(255, 255, 255, 0.2); /* Glass effect */
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    text-align: center;
+}
+
+
+.email-icon {
+    font-size: 1.2rem;
+    color: yellow;
+}
+
+.email-text {
+    font-size: 1.2rem;
+    color: white;
+    font-weight: bold;
+}
