@@ -10,7 +10,7 @@
     margin-top: 250px;
     opacity: 0; /* Initially hidden */
     transform: translateY(50px); /* Initially below */
-    transition: opacity 1s ease, transform 1s ease; /* Smooth transition */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
 }
 body {
     padding-top: 25px; /* Add space at the top of the body */
@@ -805,5 +805,26 @@ body {
     .join-button {
         font-size: 0.85rem; /* Even smaller button text */
         padding: 10px 20px; /* Further reduce padding for the button */
+    }
+}
+
+.mobile-logo-section {
+    display: none; /* Hide by default */
+    
+}
+
+
+
+/* Show the section only on mobile */
+@media (max-width: 768px) {
+    .mobile-logo-section {
+        margin-top: -200px;
+        display: block;
+        text-align: center;
+    }
+
+    .mobile-logo {
+        width: 150px; /* Adjust size as needed */
+        height: auto;
     }
 }

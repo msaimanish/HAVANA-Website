@@ -17,6 +17,8 @@ body {
 
 
 
+
+
 /* Hero image styling */
 .hero-image {
   flex: 1;
@@ -38,6 +40,14 @@ body {
 @media (max-width: 768px) {
   .hero-image {
     display: none;
+  }
+
+  #hero {
+    position: relative;
+    display: flex;
+    flex-direction: none;
+    align-items: none;
+    justify-content: none;
   }
 }
 
@@ -405,13 +415,14 @@ body::-webkit-scrollbar-track {
 /* Timer Style */
 #timer-container {
   text-align: center;
-  margin-top: 50px;
+  margin: 50px;
 }
 
 #timer {
   font-size: 2rem;
   font-weight: bold;
   color: #ffcc00;
+  
 }
 
 #timer span {
@@ -759,7 +770,7 @@ body::-webkit-scrollbar-track {
       align-items: center;    /* Center vertically (if needed) */
       position: absolute;     /* Ensure it stays at the top */
       top: -40px;
-      left: 26%;
+      left: 28%;
       z-index: 1000;          /* Ensure it stays above other elements */ 
       scale: 1.2;
     }
@@ -786,11 +797,11 @@ body::-webkit-scrollbar-track {
 
   #timer {
     margin: 5px;
-    margin-left: 15px;
+    margin-left: 20%;
     font-size: 2.5rem;
     font-weight: bold;
     color: #ffcc00;
-    max-width: 250px;
+    max-width: 950px;
   }
 
   #timer span {
